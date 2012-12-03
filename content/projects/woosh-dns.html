@@ -1,0 +1,27 @@
+---
+title: .NET meets DNS
+description: .NET meets DNS
+created: !!timestamp "2006-03-01 12:00:00"
+tags:
+    - woosh
+    - .net
+    - linux
+    - dns
+---
+{% from "mit_macros.j2" import project_info %}
+{{ project_info(client='Woosh Wireless', start='November 2005', end='February 2006') }}
+
+{% mark excerpt -%}
+
+We developed an interface between the Woosh .NET environment and backend
+DNS services running on Linux. 
+
+{%- endmark %}
+
+
+The interface was written in C# and ran on Mono,
+providing a single uniform access to three products on the Unix
+backend.
+
+This allowed Woosh to integrate them as a single product on their
+self-service web site.

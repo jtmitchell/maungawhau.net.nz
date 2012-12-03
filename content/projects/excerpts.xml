@@ -1,0 +1,6 @@
+===
+title: Maungawhau IT Projects feed
+extends: atom.j2
+excerpts_only: true
+listable: false
+===
