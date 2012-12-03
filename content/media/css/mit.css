@@ -30,3 +30,9 @@ ul.indent li {
     width: 270px;
     height: 179px;
 }
+
+.banner {
+    background-image: url('/media/images/mt-eden_colour.png');
+    background-repeat: repeat-x;
+    background-position: left;
+}

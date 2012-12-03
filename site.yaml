@@ -57,3 +57,11 @@ publisher:
     zip:
         type: hyde.ext.publishers.pyfs.PyFS
         url: zip://~/Desktop/mit-website.zip
+    nutmeg:
+        type: hyde.ext.publishers.pyfs.PyFS
+        url: sftp://james@nutmeg/var/www/maungawhau.net.nz/
+# getting Already owned error - just push to nutmeg, and let it sync
+#    s3:
+#        type: hyde.ext.publishers.pyfs.PyFS
+#        url: s3://www.maungawhau.net.nz/
+        

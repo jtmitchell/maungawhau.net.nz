@@ -1,0 +1,5 @@
+# default to allow access to the site
+User-agent: *
+Disallow: /rackmonkey/
+Disallow: /tv-guide/
+
