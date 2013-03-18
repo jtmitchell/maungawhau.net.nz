@@ -1,0 +1,24 @@
+---
+title: Yellow Pages
+description: Yellow Pages
+created: !!timestamp "2013-03-04 20:56:00"
+tags:
+    - yellowpages
+    - website
+    - python
+    - django
+---
+{% from "mit_macros.j2" import project_info %}
+{{ project_info(client='Yellow Pages', start='March 2013', end='') }}
+
+{% mark image -%}
+![YellowPages]([[!!images/yellowpages.png]])
+{%- endmark %}
+
+{% mark excerpt -%}
+
+At [Yellow Pages](http://www.yellowpages.co.nz)
+we are involved in BAU defect fixes and rolling out the updated
+Yellow Toolbox site.
+
+{%- endmark %}

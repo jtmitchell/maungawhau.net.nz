@@ -11,6 +11,7 @@ description: Information about who we are, and what we do
 <br/>
 <div class="slideshow">
     <ul id="slider">
+        <li><img src="{{ media_url('images/yellowpages.png') }}" alt="" border="0"/></li>
         <li><img src="{{ media_url('images/stellarlibrary-home.png') }}" alt="" border="0"/></li>
         <li><img src="{{ media_url('images/wrappz.co.nz-images.png') }}" alt="" border="0"/></li>
         <li><img src="{{ media_url('images/nakedgym-home.png') }}" alt="" border="0"/></li>
@@ -107,6 +108,7 @@ $(document).ready( function(){
       resumeDelay         : 15000,     // Resume slideshow after user interaction, only if autoplayLocked is true (in milliseconds). 
       animationTime       : 600,       // How long the slideshow transition takes (in milliseconds) 
       delayBeforeAnimate  : 0,         // How long to pause slide animation before going to the desired slide (used if you want your "out" FX to show). 
+      hashTags: false,
     });
 });
 </script>
