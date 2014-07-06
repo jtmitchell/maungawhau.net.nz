@@ -1,0 +1,19 @@
+{# Columns template #}
+
+{% extends "topbar.j2" %}
+
+{% block basecss %}
+{% endblock basecss %}
+
+
+{% block content %}
+
+      {% block slideshow %}{% endblock %}
+      {% filter markdown -%}
+      {% block main %}{% endblock %}
+      {%- endfilter %}
+
+{% endblock content %}
+
+
+

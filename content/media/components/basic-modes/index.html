@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="../platform/platform.js"></script>
+<link rel="import" href="../basic-framed-content/basic-framed-content.html">
+<link rel="import" href="basic-modes.html">
+
+<style>
+body,
+button,
+input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+}
+
+basic-framed-content {
+  padding: 2em;
+}
+
+img {
+  display: block;
+}
+</style>
+
+</head>
+
+<body unresolved>
+<basic-framed-content>
+<template is="auto-binding">
+  Select mode: <select value="{{choice}}">
+    <option value="0">First</option>
+    <option value="1">Second</option>
+    <option value="2">Third</option>
+  </select>
+  <basic-modes selected="{{choice}}">
+    <div>Some elements could go here.</div>
+    <div>A different set of elements could go here.</div>
+    <div>And another set could go here.</div>
+  </basic-modes>
+</template>
+</basic-framed-content>
+</body>
+
+</html>

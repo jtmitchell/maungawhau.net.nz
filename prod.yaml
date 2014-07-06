@@ -1,0 +1,6 @@
+extends: site.yaml
+mode: production
+publisher:
+    s3:
+        type: hyde.ext.publishers.pyfs.PyFS
+        url: s3://www.maungawhau.net.nz/

@@ -1,0 +1,10 @@
+/* Put your styles here */
+.page-header {
+    background-image: url('/media/images/mt-eden_colour.png');
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.address {
+    font-size: 0.95em;
+    text-align: right;
+}

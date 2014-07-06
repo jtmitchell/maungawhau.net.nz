@@ -1,0 +1,70 @@
+---
+title: About Us
+subtitle: 
+description: Information about who we are, and what we do
+---
+
+{% extends "columns.j2" %}
+
+{% block css %}
+<link rel="import" href="{{ media_url('components/basic-slideshow/basic-slideshow.html') }}">
+<link rel="import" href="{{ media_url('elements/slide-show/slide-show.html') }}">
+{% endblock css %}
+
+{% block slideshow %}
+<h4>Maungawhau IT has been providing quality IT services since 2002.</h4>
+<br/>
+<slide-show></slide-show>
+<br/>
+<basic-slideshow>
+	<img src="/media/images/wrappz.co.nz-images.png"/>
+	<img src="/media/images/wrappz.co.nz-samples.png"/>
+	<img src="/media/images/wrappz.co.nz-giftcards.png"/>
+	<img src="/media/images/wrappz.co.nz-iphone.png"/>
+	<img src="/media/images/createaposter.com.au-cats.png"/>
+	<img src="/media/images/createaposter.com.au-bartel-other.png"/>
+</basic-slideshow>
+<br/>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.querySelector('basic-slideshow').start;
+</script>
+{% endblock scripts %}
+
+{% block main %}
+#### Small is Beautiful ####
+
+We are a small company, able to be both flexible and agile in development.
+
+We also enjoy the smaller projects. Something that can be delivered in under a month, not several years.
+Projects which can be easily summarised and understood - so our customer knows what is delivered, and we know what they expect.
+
+Recently our projects have focused on websites and e-commerce, such as...
+
+* creating the createaposter.com.au website
+* extending the wrappz.co.nz website
+* customising an open source package for an ISP
+* extending the NakedGym website
+* maintaining the Ferrit website
+
+For clients including...
+
+* Fujifilm NZ
+* Telecom NZ
+* TelstraClear
+* Woosh Wireless
+
+
+#### Tools of the Trade ####
+
+Maungawhau IT specialises in all things Unix and Linux. 
+This leads naturally to webservers, e-commerce, and all things Internet.
+
+We use and recommend Ubuntu, Python, MySQL, and the Amazon Cloud. 
+Optionally you may prefer Red Hat, Perl, PHP, or PostgreSQL. 
+Pick one of Apache, Cherokee, or nginx.
+
+{% endblock main %}
+
