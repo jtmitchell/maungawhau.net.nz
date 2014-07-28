@@ -8,7 +8,7 @@
 !!python/unicode 'blog/tags/python.html': [base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'blog/tags/website.html': [base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'blog/wrappz.html': [blog.j2, base.j2, analytics.j2]
-!!python/unicode 'index.html': [columns.j2, base.j2, analytics.j2, topbar.j2]
+!!python/unicode 'index.html': [base.j2, analytics.j2]
 !!python/unicode 'media/bower_components/basic-element/.bower.json': []
 !!python/unicode 'media/bower_components/basic-element/LICENSE': []
 !!python/unicode 'media/bower_components/basic-element/basic-element.html': []
@@ -1433,9 +1433,8 @@
 !!python/unicode 'project/tags/php.html': [base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'project/tags/python.html': [base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'project/tags/website.html': [base.j2, tagged_posts.j2, analytics.j2]
-!!python/unicode 'projects/createaposter.html': [columns.j2, base.j2, analytics.j2,
-  topbar.j2]
-!!python/unicode 'projects/index.html': [columns.j2, base.j2, analytics.j2, topbar.j2]
+!!python/unicode 'projects/createaposter.html': [base.j2, analytics.j2]
+!!python/unicode 'projects/index.html': [projects.j2, base.j2, analytics.j2]
 !!python/unicode 'projects/project/createaposter.html': [topbar.j2, base.j2, analytics.j2,
   columns.j2, macros.j2]
 !!python/unicode 'projects/project/wrappz.html': [topbar.j2, base.j2, analytics.j2,
@@ -1446,4 +1445,4 @@
 !!python/unicode 'projects/tags/php.html': [base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'projects/tags/python.html': [base.j2, tagged_posts.j2, analytics.j2]
 !!python/unicode 'projects/tags/website.html': [base.j2, tagged_posts.j2, analytics.j2]
-!!python/unicode 'projects/wrappz.html': [columns.j2, base.j2, analytics.j2, topbar.j2]
+!!python/unicode 'projects/wrappz.html': [base.j2, analytics.j2]

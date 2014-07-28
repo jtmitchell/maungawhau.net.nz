@@ -4,7 +4,7 @@ subtitle:
 description: Information about who we are, and what we do
 ---
 
-{% extends "columns.j2" %}
+{% extends "base.j2" %}
 
 {% block css %}
 <link rel="import" href="{{ media_url('components/basic-slideshow/basic-slideshow.html') }}">
@@ -14,16 +14,14 @@ description: Information about who we are, and what we do
 {% block slideshow %}
 <h4>Maungawhau IT has been providing quality IT services since 2002.</h4>
 <br/>
-<slide-show></slide-show>
-<br/>
-<basic-slideshow>
-	<img src="/media/images/wrappz.co.nz-images.png"/>
-	<img src="/media/images/wrappz.co.nz-samples.png"/>
-	<img src="/media/images/wrappz.co.nz-giftcards.png"/>
-	<img src="/media/images/wrappz.co.nz-iphone.png"/>
-	<img src="/media/images/createaposter.com.au-cats.png"/>
-	<img src="/media/images/createaposter.com.au-bartel-other.png"/>
-</basic-slideshow>
+<slide-show>
+    <img src="/media/images/yellow-homepage.png" />
+    <img src="/media/images/stellarlibrary-home.png" />
+    <img src="/media/images/wrappz.co.nz-images.png" />
+    <img src="/media/images/nakedgym-home.png" />
+    <img src="/media/images/ferrit-search-ipods.png" />
+    <img src="/media/images/createaposter.com.au-bartel-other.png" />
+</slide-show>
 <br/>
 {% endblock %}
 

@@ -13,12 +13,7 @@ Polymer slideshow
 <template>
 	<div class="slideshow">
 	    <ul id="slider">
-	        <li><img src="/media/images/yellow-homepage.png" alt="" border="0"/></li>
-	        <li><img src="/media/images/stellarlibrary-home.png" alt="" border="0"/></li>
-	        <li><img src="/media/images/wrappz.co.nz-images.png" alt="" border="0"/></li>
-	        <li><img src="/media/images/nakedgym-home.png" alt="" border="0"/></li>
-	        <li><img src="/media/images/ferrit-search-ipods.png" alt="" border="0"/></li>
-	        <li><img src="/media/images/createaposter.com.au-bartel-other.png" alt="" border="0"/></li>
+	    <!-- the images are inserted here -->
 	    </ul>
 	</div>
 	<link href="anythingslider.css" rel="stylesheet">
@@ -32,6 +27,12 @@ Polymer slideshow
 <script type="text/javascript">
 	Polymer('slide-show', {
 		ready: function(){
+			// grab the images from the content bit
+			this.images = [].slice.call(this.children);
+			for (item in this.images) {
+				$(this.$.slider).append('<li>' + this.images[item]['outerHTML'] + '</li>');
+			}
+			
 			$(this.$.slider).anythingSlider({ 
 			      theme               : "default",
 			      mode                : "horiz",

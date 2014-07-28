@@ -18,6 +18,7 @@
 	<link rel="import" href="{{ media_url('components/core-item/core-item.html') }}">
 	<link rel="import" href="{{ media_url('components/core-scaffold/core-scaffold.html') }}">
 	<link rel="import" href="{{ media_url('components/core-menu/core-menu.html') }}">
+	<link rel="import" href="{{ media_url('components/core-item/core-item.html') }}">
 	<link rel="import" href="{{ media_url('components/core-drawer-panel/core-drawer-panel.html') }}">
 	<link rel="import" href="{{ media_url('components/paper-tabs/paper-tabs.html') }}">
 
@@ -60,16 +61,14 @@
 	<core-header-panel navigation flex>
 	    <core-toolbar id="navheader">
 			<span>{{ site_title }}</span>
-		  <core-menu>
-			<paper-tabs valueattr="name" selected="{{ resource.url }}" self-end>
-				{% for item in menu -%}
-				<paper-tab name="item.url">{{ item.name }}</paper-tab>
-				{%- endfor %}
-			</paper-tabs>
- 		  </core-menu>
-
-		  
 	    </core-toolbar>
+		<paper-tabs valueattr="name" selected="{{ resource.url }}" self-end>
+			{% for item in menu -%}
+				<paper-tab name="{{item.url}}">
+				<a href="{{item.url}}">{{item.title}}</a>
+				</paper-tab>
+			{%- endfor %}
+		</paper-tabs>
 	    <contact-details></contact-details>
   	</core-header-panel>
 
@@ -80,8 +79,13 @@
 	
 	<div class="content">
 	{% block content %}
+		{% block slideshow %}{% endblock %}
+		{% filter markdown -%}
+		{% block main %}{% endblock %}
+		{%- endfilter %}
 	{% endblock %}
 	</div>
+	
 </core-scaffold>  
 {% endblock body %}
     
