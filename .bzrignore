@@ -1,0 +1,5 @@
+deploy/
+.project
+.pydevproject
+.venv
+
