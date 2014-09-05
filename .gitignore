@@ -1,0 +1,6 @@
+.hyde_deps
+deploy/
+.project
+.pydevproject
+.settings/
+
