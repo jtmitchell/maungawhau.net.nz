@@ -19,6 +19,13 @@ context:
                 type: page
                 url: /
             -
+                name: Blog
+                description: Blog
+                css_class: blog
+                type: node
+                url: /blog
+
+            -
                 name: Projects
                 description: Recent Projects
                 css_class: blog
@@ -34,7 +41,7 @@ meta:
     nodemeta: meta.yaml
     created: !!timestamp 2010-01-01 00:00:00
     author: Maungawhau IT
-    google_verify: 33x5vGoEu7CSFy3gTskQTs2JZULF+ZNhIxu0noax7nc=
+    google_verify: ly8QgWAy0wwtyg5EoDAcuzhxRvsglDkNS740NVwHLco
 sorter:
     time:
         attr:
@@ -46,9 +53,16 @@ sorter:
 tagger:
     sorter: time
     archives:
-        blog:
+        project:
             source: projects
             target: projects/tags
+            template: tagged_posts.j2
+            archive_extension: html
+            meta:
+                listable: false
+        blog:
+            source: blog
+            target: blog/tags
             template: tagged_posts.j2
             archive_extension: html
             meta:

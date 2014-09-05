@@ -7,7 +7,7 @@
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
   {% block starthead %}{% endblock starthead %}
-  {% if resource.meta.google_verify %}<meta name="verify-v1" content="{{ resource.meta.google_verify }}">{% endif %}
+  {% if resource.meta.google_verify %}<meta name="google-site-verification" content="{{ resource.meta.google_verify }}">{% endif %}
   <meta charset="{{ resource.meta.charset }}">
 
   <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
@@ -75,7 +75,7 @@
     {% endblock container %}
   </div> <!--! end of #container -->
   <footer>
-      Copyright &copy; 2012. All rights reserved.
+      Copyright &copy; 2014. All rights reserved.
   </footer>
   {% endblock content%}
   {% block js %}

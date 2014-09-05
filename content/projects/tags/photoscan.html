@@ -6,5 +6,5 @@ listable: false
 
 {% set tag = site.tagger.tags['photoscan'] %}
 {% set source = site.content.node_from_relative_path('projects') %}
-{% set walker = source.walk_resources_tagged_with_photoscan %}
+{% set walker = source['walk_resources_tagged_with_photoscan'] %}
 {% extends "tagged_posts.j2" %}

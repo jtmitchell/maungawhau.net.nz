@@ -1,0 +1,10 @@
+---
+extends: false
+listable: false
+
+---
+
+{% set tag = site.tagger.tags['hosting_direct'] %}
+{% set source = site.content.node_from_relative_path('blog') %}
+{% set walker = source['walk_resources_tagged_with_hosting_direct'] %}
+{% extends "tagged_posts.j2" %}
