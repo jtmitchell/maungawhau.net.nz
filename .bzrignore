@@ -1,5 +1,2 @@
-deploy/
-.project
-.pydevproject
-.venv
-
+.hyde_deps
+deploy
