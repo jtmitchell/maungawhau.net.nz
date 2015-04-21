@@ -11,6 +11,7 @@ var rimraf = require('gulp-rimraf');
 var marked = require('gulp-marked');
 var gulp = require('gulp');
 var path = require('path');
+var rename = require('gulp-rename');
 
 var site = {
 		'title': 'Maungawhau IT',
@@ -166,18 +167,6 @@ gulp.task('pages', ['cleanpages', 'testimonials'], function () {
         .pipe(rename({extname: '.html'}));
 
     return merge(html, markdown)
-        .pipe(gulpif(!DEBUG, htmlmin({
-            // This option seems logical, but it breaks gulp-rev-all
-            removeAttributeQuotes: false,
-
-            removeComments: true,
-            collapseWhitespace: true,
-            removeRedundantAttributes: true,
-            removeStyleLinkTypeAttributes: true,
-            minifyJS: true,
-            minifyCSS: true,
-            minifyURLs: true
-        })))
         .pipe(gulp.dest('dist'));
 });
 
