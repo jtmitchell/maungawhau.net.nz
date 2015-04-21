@@ -6,4 +6,4 @@ dist
 .settings/
 .venv
 .env
-
+.tern-project

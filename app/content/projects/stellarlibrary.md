@@ -1,0 +1,29 @@
+---
+title: StellarLibrary
+description: StellarLibrary
+created: !!timestamp "2012-12-03 20:56:00"
+tags:
+    - stellarlibrary
+    - website
+    - ecommerce
+    - python
+    - flask
+---
+{% from "mit_macros.j2" import project_info %}
+{{ project_info(client='Stellar Software', start='September 2012', end='February 2013') }}
+
+{% mark image -%}
+![StellarLibrary](/media/images/stellarlibrary-home.png)
+{%- endmark %}
+
+
+We worked with [StellarLibrary](http://www.stellarlibrary.com)
+to extend the capabilities of their backend administration. 
+<!--more-->
+
+These included a new Reseller capability,
+and automatic foreign exchange conversion for invoices and receipts.
+
+On the user-facing site, we implemented some routines that used ImageMagick to 
+manipulate PDF document thumbnails, and customised folder images.
+

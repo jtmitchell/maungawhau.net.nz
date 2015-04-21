@@ -1,0 +1,38 @@
+/* CSS for Maungawhau IT */
+
+h2 {
+    font-size: 24px;
+    line-height: 36px;
+    border-bottom: 1px solid #ccc;
+    color: #3377EE;
+}
+p {
+    padding-bottom: 0.5em;
+}
+.project_info h2 {
+    font-size: 24px;
+    line-height: 36px;
+    border-bottom: 0;
+    color: #3377EE;
+}
+.project_info h3 {
+    font-size: 18px;
+}
+ul.indent {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+ul.indent li {
+    margin-left: 2em;
+}
+
+.listing img {
+    width: 270px;
+    height: 179px;
+}
+
+.banner {
+    background-image: url('/media/images/mt-eden_colour.png');
+    background-repeat: repeat-x;
+    background-position: left;
+}

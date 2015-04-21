@@ -1,0 +1,16 @@
+---
+title: Photo-Scan DVR
+description: Photo-Scan DVR
+created: !!timestamp "2003-03-01 12:00:25"
+tags:
+    - photoscan
+    - linux
+    - video
+---
+{% from "mit_macros.j2" import project_info %}
+{{ project_info(client='Photo-Scan Ltd.', start='February 2003') }}
+
+We worked with Photo-Scan, who had started to import a Linux-based version of their DVR software.
+<!--more-->
+The project was to customise the installation disk for the software, and provide their own defaults for various settings.
+

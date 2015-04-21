@@ -1,0 +1,121 @@
+---
+extends: base.j2
+title: About Us
+subtitle: Maungawhau Information Technology
+description: Information about who we are, and what we do
+---
+
+{% block main %}
+<h2>Quality IT Services</h2>
+<p>Maungawhau IT has been providing quality IT services since 2002.</p>
+<br/>
+<div class="slideshow">
+    <ul id="slider">
+        <li><img src="{{ media_url('images/yellow-homepage.png') }}" alt="" border="0"/></li>
+        <li><img src="{{ media_url('images/stellarlibrary-home.png') }}" alt="" border="0"/></li>
+        <li><img src="{{ media_url('images/wrappz.co.nz-images.png') }}" alt="" border="0"/></li>
+        <li><img src="{{ media_url('images/nakedgym-home.png') }}" alt="" border="0"/></li>
+        <li><img src="{{ media_url('images/ferrit-search-ipods.png') }}" alt="" border="0"/></li>
+        <li><img src="{{ media_url('images/createaposter.com.au-bartel-other.png') }}" alt="" border="0"/></li>
+    </ul>
+</div>
+<br/>
+
+<h2>Small is Beautiful</h2>
+<br/>
+<p>We are a small company, able to be both flexible and agile in development.</p>
+
+<p>We also enjoy the smaller projects. Something that can be delivered in under a month, not several years.
+Projects which can be easily summarised and understood - so our customer knows what is delivered, and we know what they expect.
+</p>
+
+<p>Recently our projects have focused on websites and e-commerce, such as...</p>
+
+<ul class="indent">
+    <li>working on the Yellow and Whitepages sites</li>
+    <li>creating the createaposter.com.au website</li>
+    <li>extending the wrappz.co.nz website</li>
+    <li>extending the NakedGym website</li>
+</ul>
+
+<p>For clients including...</p>
+
+<ul class="indent">
+    <li>Yellow Pages</li>
+    <li>Fujifilm NZ</li>
+    <li>Telecom NZ</li>
+    <li>TelstraClear</li>
+    <li>Woosh Wireless</li>
+</ul>
+
+<br/>
+<h2>Tools of the Trade</h2>
+<br/>
+<p>Maungawhau IT specialises in all things Unix and Linux. 
+This leads naturally to webservers, e-commerce, and all things Internet.</p>
+
+<p>
+We use and recommend Ubuntu, Python, MySQL, and the Amazon Cloud. 
+Optionally you may prefer Red Hat, Perl, PHP, or PostgreSQL. 
+Pick one of Apache, Cherokee, or nginx.
+</p>
+<p>
+The new excitment is 
+<a href="http://cloudfoundry.org/index.html" target="_blank">Cloud Foundry</a>
+and <a href="http://www.activestate.com/stackato" target="_blank">Stackato</a>, 
+new <a href="http://en.wikipedia.org/wiki/Platform_as_a_service" target="_blank">PaaS</a> clouds.
+</p>
+<br/>
+
+<hr/>
+<h2><a href="/projects">What are we up to?</a></h2>
+
+{% from "macros.j2" import render_excerpt with context %}
+<section class="blog_excerpt">
+{% set latest = site.content.walk_resources_sorted_by_time()|first %}
+
+{% if latest -%}
+{{ render_excerpt(latest, 'post') }}
+
+<a class="button white medium"
+    href="{{ content_url(latest.url) }}">Read more&hellip;</a>
+
+{%- endif %}
+
+</section>
+
+{% endblock main %}
+
+{% block extra_css %}
+<link href="{{ media_url('css/anythingslider.css') }}" rel="stylesheet">
+{% endblock extra_css %}
+
+{% block scripts %}
+<script src="{{ media_url('js/libs/jquery.anythingslider.min.js') }}"></script>
+<script type="text/javascript">
+$(document).ready( function(){
+    $('#slider').anythingSlider({ 
+      theme               : "default",
+      mode                : "horiz",
+      expand              : false,
+      resizeContents      : true,
+      showMultiple        : false,     // Set this value to a number and it will show that many slides at once 
+      easing              : "swing",
+      buildArrows         : false,      // If true, builds the forwards and backwards buttons 
+      buildNavigation     : false,      // If true, builds a list of anchor links to link to each panel 
+      buildStartStop      : false,      // If true, builds the start/stop button       // Slideshow options 
+      autoPlay            : true,     // If true, the slideshow will start running; replaces "startStopped" option 
+      autoPlayLocked      : true,     // If true, user changing slides will not stop the slideshow 
+      autoPlayDelayed     : false,     // If true, starting a slideshow will delay advancing slides; if false, the slider will immediately advance to the next slide when slideshow starts 
+      pauseOnHover        : true,      // If true & the slideshow is active, the slideshow will pause on hover 
+      stopAtEnd           : false,     // If true & the slideshow is active, the slideshow will stop on the last page. This also stops the rewind effect when infiniteSlides is false. 
+      playRtl             : false,     // If true, the slideshow will move right-to-left 
+      delay               : 3000,      // How long between slideshow transitions in AutoPlay mode (in milliseconds) 
+      resumeDelay         : 15000,     // Resume slideshow after user interaction, only if autoplayLocked is true (in milliseconds). 
+      animationTime       : 600,       // How long the slideshow transition takes (in milliseconds) 
+      delayBeforeAnimate  : 0,         // How long to pause slide animation before going to the desired slide (used if you want your "out" FX to show). 
+      hashTags: false,
+    });
+});
+</script>
+{% endblock scripts %}

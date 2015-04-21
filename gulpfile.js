@@ -158,6 +158,11 @@ gulp.task('serve', ['styles'], function () {
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['jshint']);
   gulp.watch(['app/images/**/*'], reload);
+  
+  // watch for static stire changes
+  gulp.watch(['app/templates/**'], ['content', reload]);
+  gulp.watch(['app/content/pages/**', 'app/content/testimonials/**'], ['pages', reload]);
+  gulp.watch(['app/content/posts/**'], ['posts', 'rss', reload]);
 });
 
 // Build and serve the output from the dist build
@@ -175,8 +180,10 @@ gulp.task('serve:dist', ['default'], function () {
 
 // Build production files, the default task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
+  runSequence('styles', 'content', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
 });
+
+// gulp.task('default', ['content', 'images', 'fonts', 'styles', 'favicon', 'rss']);
 
 // Run PageSpeed Insights
 gulp.task('pagespeed', function (cb) {
@@ -190,4 +197,4 @@ gulp.task('pagespeed', function (cb) {
 });
 
 // Load custom tasks from the `tasks` directory
-// try { require('require-dir')('tasks'); } catch (err) { console.error(err); }
+try { require('require-dir')('tasks'); } catch (err) { console.error(err); }
