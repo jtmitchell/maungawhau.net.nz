@@ -2,18 +2,24 @@
 
 {% block content -%}
 <article class="post">
-
-{% block post -%}{%- endblock %}
+	<header>
+        <div class="tags">
+            {% for tag in page.tags %}
+                <a href="/tag/{{tag}}.html">{{tag}}</a>
+            {% endfor %}
+        </div>
+        <h3 class="published">{{page.date|date('M j, Y')}}</h3>
+    </header>
+	{{content|safe}}
+</article>
 {% if page.comments %}
 <script src="https://apis.google.com/js/plusone.js">
 </script>
 <div class="g-comments"
-    data-href="{{ content_url(resource.node.url) }}"
+    data-href="{{site.url}}{{post.url}}"
     data-width="642"
     data-first_party_property="BLOGGER"
     data-view_type="FILTERED_POSTMOD">
 </div>
 {% endif %}
-</article>
-
 {%- endblock %}

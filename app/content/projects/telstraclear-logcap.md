@@ -1,7 +1,7 @@
 ---
 title: TelstraClear
 description: TelstraClear
-created: !!timestamp "2005-10-01 12:00:00"
+created: 2005-10-01
 tags:
     - telstraclear
     - perl
@@ -10,8 +10,8 @@ tags:
     - dns
     - soap
 ---
-{% from "mit_macros.j2" import project_info %}
-{{ project_info(client='TelstraClear', start='June 2004', end='September 2005') }}
+## Client: TelstraClear
+### June 2004 to September 2005
 
 We worked with the Auckland Operations group to update a log capture and
 analysis tool to provide greater flexibility and to run on Solaris.

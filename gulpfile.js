@@ -46,7 +46,8 @@ gulp.task('jshint', function () {
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')))
+    .pipe(gulp.dest('dist/scripts'));
 });
 
 // Optimize images
@@ -65,6 +66,8 @@ gulp.task('copy', function () {
   return gulp.src([
     'app/*',
     '!app/*.html',
+    '!app/assets',
+    '!app/content',
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
@@ -111,12 +114,9 @@ gulp.task('html', function () {
     // Concatenate and minify JavaScript
     .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
     // Remove any unused CSS
-    // Note: if not using the Style Guide, you can delete it from
-    //       the next line to only include styles your project uses.
     .pipe($.if('*.css', $.uncss({
       html: [
-        'app/index.html',
-        'app/styleguide.html'
+        'app/index.html'
       ],
       // CSS Selectors for UnCSS to ignore
       ignore: [
@@ -154,15 +154,16 @@ gulp.task('serve', ['styles'], function () {
     server: ['.tmp', 'app']
   });
 
-  gulp.watch(['app/**/*.html'], reload);
+//  gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['jshint']);
   gulp.watch(['app/images/**/*'], reload);
   
-  // watch for static stire changes
+  // watch for static aite changes
   gulp.watch(['app/templates/**'], ['content', reload]);
-  gulp.watch(['app/content/pages/**', 'app/content/testimonials/**'], ['pages', reload]);
-  gulp.watch(['app/content/posts/**'], ['posts', 'rss', reload]);
+  gulp.watch(['app/content/pages/**', 'app/content/projects/**'], ['pages', 'sitemap', reload]);
+  gulp.watch(['app/content/posts/**'], ['posts', 'rss', 'sitemap', reload]);
+  gulp.watch(['app/content/projects/**'], ['projects', 'rss', 'sitemap', reload]);
 });
 
 // Build and serve the output from the dist build
@@ -180,7 +181,7 @@ gulp.task('serve:dist', ['default'], function () {
 
 // Build production files, the default task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', 'content', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
+  runSequence('styles', 'content', ['jshint', 'images', 'fonts', 'copy'], cb);
 });
 
 // gulp.task('default', ['content', 'images', 'fonts', 'styles', 'favicon', 'rss']);

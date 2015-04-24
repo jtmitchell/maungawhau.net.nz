@@ -1,20 +1,18 @@
 ---
 title: Shopping at Ferrit
 description: Shopping at Ferrit
-created: !!timestamp "2009-03-01 12:00:25"
+created: 2009-03-01
 tags:
     - telecom
     - website
     - ecommerce
     - perl
     - virtual_machine
+image: ferrit-cameras.png
+image_caption: Ferrit
 ---
-{% from "mit_macros.j2" import project_info %}
-{{ project_info(client='Telecom NZ', start='October 2006', end='February 2009') }}
-
-{% mark image -%}
-![Ferrit](/media/images/ferrit-cameras.png)
-{%- endmark %}
+## Client: Telecom NZ
+### October 2006 to February 2009
 
 We worked on Telecom's Ferrit online shopping site to deliver new capabilities, such as search and direct bank deposit payments,
 and to support the huge Perl-based application.

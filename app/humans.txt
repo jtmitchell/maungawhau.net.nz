@@ -3,11 +3,7 @@
 
 # TEAM
 
-  <name> -- <role> -- <twitter>
-
-# THANKS
-
-  <name>
+  James Mitchell -- Developer
 
 # TECHNOLOGY COLOPHON
 

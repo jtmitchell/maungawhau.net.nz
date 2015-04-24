@@ -1,7 +1,7 @@
 ---
 title: What the Cloud means to me
 description: First thoughts about cloud deployment
-created: !!timestamp "2014-06-04 21:00:00"
+created: 2014-06-04 21:00:00
 comments: true
 tags:
     - cloud
@@ -63,9 +63,7 @@ The shiny new Cloud Foundry cloud will now
 
 *That's* what I mean by _cloud_
 
-{% mark image -%}
-![Stackato Cloud](/media/images/stackato-cake-diagram.png)[Stackato cake diagram]
-{%- endmark %}
+![Stackato Cloud](images/posts/stackato-cake-diagram.png)[Stackato cake diagram]
 
 # But wait! There's more!
 

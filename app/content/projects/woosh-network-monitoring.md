@@ -1,7 +1,7 @@
 ---
 title: Woosh Network Monitoring
 description: Woosh Network Monitoring
-created: !!timestamp "2004-07-01 12:00:00"
+created: 2004-07-01
 tags:
     - woosh
     - .net
@@ -10,8 +10,8 @@ tags:
     - dns
     - soap
 ---
-{% from "mit_macros.j2" import project_info %}
-{{ project_info(client='Woosh Wireless', start='November 2003', end='June 2004') }}
+## Client: Woosh Wireless
+### November 2003 to June 2004
 
 
 We developed scripts and a database to store and graph SNMP data

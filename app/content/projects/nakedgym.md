@@ -1,19 +1,17 @@
 ---
 title: The Naked Gym
 description: The Naked Gym
-created: !!timestamp "2009-09-01 12:00:25"
+created: 2009-09-01
 tags:
     - consortium
     - website
     - python
     - django
+image: nakedgym-home.png
+image_caption: The NakedGym
 ---
-{% from "mit_macros.j2" import project_info %}
-{{ project_info(client='Consortium', start='April 2009', end='August 2009') }}
-
-{% mark image -%}
-![The NakedGym](/media/images/nakedgym-home.png)
-{%- endmark %}
+## Client: Consortium
+### April 2009 to August 2009
 
 Worked on the nakedgym.co.nz site.
 <!--more-->

@@ -1,22 +1,17 @@
----
-extends: base.j2
-title: About Us
-subtitle: Maungawhau Information Technology
-description: Information about who we are, and what we do
----
-
-{% block main %}
+{% extends "base.html" %}
+{% set page.nav = "home" %}
+{% block content %}
 <h2>Quality IT Services</h2>
 <p>Maungawhau IT has been providing quality IT services since 2002.</p>
 <br/>
 <div class="slideshow">
     <ul id="slider">
-        <li><img src="{{ media_url('images/yellow-homepage.png') }}" alt="" border="0"/></li>
-        <li><img src="{{ media_url('images/stellarlibrary-home.png') }}" alt="" border="0"/></li>
-        <li><img src="{{ media_url('images/wrappz.co.nz-images.png') }}" alt="" border="0"/></li>
-        <li><img src="{{ media_url('images/nakedgym-home.png') }}" alt="" border="0"/></li>
-        <li><img src="{{ media_url('images/ferrit-search-ipods.png') }}" alt="" border="0"/></li>
-        <li><img src="{{ media_url('images/createaposter.com.au-bartel-other.png') }}" alt="" border="0"/></li>
+        <li><img src="images/projects/yellow-homepage.png" alt="" border="0"/></li>
+        <li><img src="images/projects/stellarlibrary-home.png" alt="" border="0"/></li>
+        <li><img src="images/projects/wrappz.co.nz-images.png" alt="" border="0"/></li>
+        <li><img src="images/projects/nakedgym-home.png" alt="" border="0"/></li>
+        <li><img src="images/projects/ferrit-search-ipods.png" alt="" border="0"/></li>
+        <li><img src="images/projects/createaposter.com.au-bartel-other.png" alt="" border="0"/></li>
     </ul>
 </div>
 <br/>
@@ -60,7 +55,7 @@ Optionally you may prefer Red Hat, Perl, PHP, or PostgreSQL.
 Pick one of Apache, Cherokee, or nginx.
 </p>
 <p>
-The new excitment is 
+The new excitement is 
 <a href="http://cloudfoundry.org/index.html" target="_blank">Cloud Foundry</a>
 and <a href="http://www.activestate.com/stackato" target="_blank">Stackato</a>, 
 new <a href="http://en.wikipedia.org/wiki/Platform_as_a_service" target="_blank">PaaS</a> clouds.
@@ -68,30 +63,42 @@ new <a href="http://en.wikipedia.org/wiki/Platform_as_a_service" target="_blank"
 <br/>
 
 <hr/>
-<h2><a href="/projects">What are we up to?</a></h2>
-
-{% from "macros.j2" import render_excerpt with context %}
+<h2><a href="/posts.html">What are we thinking?</a></h2>
 <section class="blog_excerpt">
-{% set latest = site.content.walk_resources_sorted_by_time()|first %}
+	{% for post in site.posts %}
+		<article>
+		{% if loop.index < 4 %}
+		<h3>{{post.title}}</h3>
+		<p>{{post.content|truncate(300)|safe}}</p>
+		<a href="{{site.url}}{{post.url}}">Read more&hellip;</a>
+		{% endif %}
+		</article>
+	{% endfor %}
+</section>
 
-{% if latest -%}
-{{ render_excerpt(latest, 'post') }}
-
-<a class="button white medium"
-    href="{{ content_url(latest.url) }}">Read more&hellip;</a>
-
-{%- endif %}
-
+<hr/>
+<h2><a href="/projects.html">What are we up to?</a></h2>
+<section class="blog_excerpt">
+	{% for post in site.projects %}
+		<article>
+		{% if loop.index < 4 %}
+		<h3>{{post.title}}</h3>
+		<p>{{post.content|truncate(300)|safe}}</p>
+		<a href="{{site.url}}{{post.url}}">Read more&hellip;</a>
+		{% endif %}
+		</article>
+	{% endfor %}
 </section>
 
 {% endblock main %}
 
 {% block extra_css %}
-<link href="{{ media_url('css/anythingslider.css') }}" rel="stylesheet">
+<link href="styles/anythingslider.css" rel="stylesheet">
 {% endblock extra_css %}
 
-{% block scripts %}
-<script src="{{ media_url('js/libs/jquery.anythingslider.min.js') }}"></script>
+{% block javascript %}
+<script src="scripts/jquery-1.7.1.js"></script>
+<script src="scripts/jquery.anythingslider.js"></script>
 <script type="text/javascript">
 $(document).ready( function(){
     $('#slider').anythingSlider({ 

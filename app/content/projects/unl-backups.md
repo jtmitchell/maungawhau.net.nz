@@ -1,15 +1,15 @@
 ---
 title: System Backups
 description: UNL Backups
-created: !!timestamp "2002-08-01 12:00:00"
+created: 2002-08-01
 tags:
     - unl
     - linux
     - shell
     - backups
 ---
-{% from "mit_macros.j2" import project_info %}
-{{ project_info(client='United Networks Ltd.', start='July 2002') }}
+## Client: United Networks Ltd.
+### July 2002
 
 
 Installed and integrated software to provide an emergency re-installation

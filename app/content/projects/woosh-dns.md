@@ -1,15 +1,15 @@
 ---
 title: .NET meets DNS
 description: .NET meets DNS
-created: !!timestamp "2006-03-01 12:00:00"
+created: 2006-03-01
 tags:
     - woosh
     - .net
     - linux
     - dns
 ---
-{% from "mit_macros.j2" import project_info %}
-{{ project_info(client='Woosh Wireless', start='November 2005', end='February 2006') }}
+## Client: Woosh Wireless
+### November 2005 to February 2006
 
 
 We developed an interface between the Woosh .NET environment and backend

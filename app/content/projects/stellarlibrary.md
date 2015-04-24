@@ -1,21 +1,18 @@
 ---
 title: StellarLibrary
 description: StellarLibrary
-created: !!timestamp "2012-12-03 20:56:00"
+created: 2012-12-03
 tags:
     - stellarlibrary
     - website
     - ecommerce
     - python
     - flask
+image: stellarlibrary-home.png
+image_caption: StellarLibrary
 ---
-{% from "mit_macros.j2" import project_info %}
-{{ project_info(client='Stellar Software', start='September 2012', end='February 2013') }}
-
-{% mark image -%}
-![StellarLibrary](/media/images/stellarlibrary-home.png)
-{%- endmark %}
-
+## Client: Stellar Software
+### September 2012 to February 2013
 
 We worked with [StellarLibrary](http://www.stellarlibrary.com)
 to extend the capabilities of their backend administration. 

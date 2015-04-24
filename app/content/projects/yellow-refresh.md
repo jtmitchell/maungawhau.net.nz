@@ -1,7 +1,7 @@
 ---
 title: Yellow Pages Refresh
 description: Visual Refresh of Yellow Pages
-created: !!timestamp "2014-06-04 18:56:00"
+created: 2014-06-04
 tags:
     - yellowpages
     - website
@@ -9,13 +9,11 @@ tags:
     - solr
     - python
     - django
+image: yellow-homepage.png
+image_caption: Yellow Homepage
 ---
-{% from "mit_macros.j2" import project_info %}
-{{ project_info(client='Yellow Pages', start='March 2013', end='') }}
-
-{% mark image -%}
-![Yellow Homepage](/media/images/yellow-homepage.png)
-{%- endmark %}
+## Client: Yellow Pages
+### March 2013 to March 2015
 
 
 [Yellow Pages](http://yellow.co.nz)
@@ -26,6 +24,6 @@ features, and extend the user experience with photo uploads, bookmarking and sav
 We have also spent time improving the search within the site, and
 tagging business pages with Google-friendly metadata and schemas.
 
-![Business listing]([[!!images/yellow-listing.png]])
+![Business listing](images/projects/yellow-listing.png)
 
-![Search resutls]([[!!images/yellow-search.png]])
+![Search resutls](images/projects/yellow-search.png)

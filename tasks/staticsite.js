@@ -66,7 +66,9 @@ gulp.task('cleanposts', function () {
 });
 
 gulp.task('posts', ['cleanposts'], function () {
-    return gulp.src('app/content/posts/*.md')
+    var images = gulp.src(['app/content/posts/*.jpg','app/content/posts/*.png'])
+    .pipe(gulp.dest('dist/images/posts'));
+    var posts = gulp.src('app/content/posts/*.md')
         .pipe(frontMatter({property: 'page', remove: true}))
         .pipe(marked())
         .pipe(summarize('<!--more-->'))
@@ -101,42 +103,39 @@ gulp.task('posts', ['cleanposts'], function () {
         })())
         .pipe(applyTemplate('app/assets/templates/post.html'))
         .pipe(gulp.dest('dist/posts'));
+    return merge(images, posts);
 });
 
 
-gulp.task('testimonials', function () {
-    // Copy testimonial images over.
-    var images = gulp.src('app/content/testimonials/*.jpg')
-        .pipe(gulp.dest('dist/images/testimonials'))
+gulp.task('projects', function () {
+    // Copy project images over.
+    var images = gulp.src(['app/content/projects/*.jpg', 'app/content/projects/*.png'])
+        .pipe(gulp.dest('dist/images/projects'));
 
-    var testimonials = gulp.src('app/content/testimonials/**/*.md')
+    var projects = gulp.src('app/content/projects/**/*.md')
         .pipe(frontMatter({property: 'page', remove: true}))
         .pipe(marked())
-        // Collect all the testimonials and place them on the site object.
+        // Collect all the projects and place them on the site object.
         .pipe((function () {
-            var testimonials = [];
+            var projects = [];
             return through.obj(function (file, enc, cb) {
-                testimonials.push(file.page);
-                testimonials[testimonials.length - 1].content = file.contents.toString();
+                projects.push(file.page);
+                projects[projects.length - 1].content = file.contents.toString();
                 this.push(file);
                 cb();
             },
             function (cb) {
-                testimonials.sort(function (a, b) {
-                    if (a.author < b.author) {
-                        return -1;
-                    }
-                    if (a.author > b.author) {
-                        return 1;
-                    }
-                    return 0;
+                projects.sort(function (a, b) {
+                	return b.date - a.date;
                 })
-                site.testimonials = testimonials;
+                site.projects = projects;
                 cb();
             })
         })())
+        .pipe(applyTemplate('app/assets/templates/post.html'))
+        .pipe(gulp.dest('dist/projects'));
 
-    return merge(images, testimonials);
+    return merge(images, projects);
 });
 
 
@@ -146,7 +145,7 @@ gulp.task('cleanpages', function () {
 });
 
 
-gulp.task('pages', ['cleanpages', 'testimonials'], function () {
+gulp.task('pages', ['cleanpages', 'projects'], function () {
     var html = gulp.src(['app/content/pages/*.html'])
         .pipe(frontMatter({property: 'page', remove: true}))
         .pipe(through.obj(function (file, enc, cb) {
@@ -182,6 +181,22 @@ gulp.task('rss', ['posts'], function () {
             this.push(file)
             cb()
         }))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('dist'));
 });
-gulp.task('content', ['posts', 'pages', 'rss']);
+
+gulp.task('sitemap', ['posts', 'pages', 'projects'], function () {
+    return gulp.src(['assets/templates/sitemap.xml'])
+        .pipe(through.obj(function (file, enc, cb) {
+            var data = {
+                site: site,
+                page: {}
+            }
+            var tpl = swig.compileFile(file.path)
+            file.contents = new Buffer(tpl(data), 'utf8')
+            this.push(file)
+            cb()
+        }))
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('content', ['posts', 'projects', 'pages', 'rss', 'sitemap']);

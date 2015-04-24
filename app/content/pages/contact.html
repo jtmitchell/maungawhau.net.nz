@@ -1,9 +1,8 @@
----
-extends: base.j2
-default_block: main
-title: Contact Details
-description: Contact details
----
+{% extends "base.html" %}
+{% set page.title = "Contact" %}
+{% set page.nav = "contact" %}
+
+{% block content %}
 
 <h2>Contact Details</h2>
 For more information, please contact<br/>
@@ -33,3 +32,5 @@ while(x=eval(x));
 //-->
 //]]>
 </script>
+
+{% endblock %}

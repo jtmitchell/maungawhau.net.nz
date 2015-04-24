@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% set page.title = "Projects" %}
+{% set page.nav = "projects" %}
+
+{% block content %}
+<article>
+	{% for post in site.projects %}
+		{% include "include/project_snippet.html" %}
+	{% endfor %}
+</article>
+{% endblock %}

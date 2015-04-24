@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% set page.title = "Blog Posts" %}
+{% set page.nav = "posts" %}
+
+{% block content %}
+<article>
+	{% for post in site.posts %}
+		{% include "include/post_snippet.html" %}
+	{% endfor %}
+</article>
+{% endblock %}
