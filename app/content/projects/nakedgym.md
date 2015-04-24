@@ -13,6 +13,8 @@ image_caption: The NakedGym
 ## Client: Consortium
 ### April 2009 to August 2009
 
+![The NakedGym](/images/projects/nakedgym-home.png)
+
 Worked on the nakedgym.co.nz site.
 <!--more-->
 

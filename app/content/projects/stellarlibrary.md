@@ -14,6 +14,8 @@ image_caption: StellarLibrary
 ## Client: Stellar Software
 ### September 2012 to February 2013
 
+![StellarLibrary](/images/projects/stellarlibrary-home.png)
+
 We worked with [StellarLibrary](http://www.stellarlibrary.com)
 to extend the capabilities of their backend administration. 
 <!--more-->

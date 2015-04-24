@@ -63,7 +63,7 @@ The shiny new Cloud Foundry cloud will now
 
 *That's* what I mean by _cloud_
 
-![Stackato Cloud](images/posts/stackato-cake-diagram.png)[Stackato cake diagram]
+![Stackato Cloud](/images/posts/stackato-cake-diagram.png)[Stackato cake diagram]
 
 # But wait! There's more!
 

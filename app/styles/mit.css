@@ -32,7 +32,7 @@ ul.indent li {
 }
 
 .banner {
-    background-image: url('/media/images/mt-eden_colour.png');
+    background-image: url('../images/mt-eden_colour.png');
     background-repeat: repeat-x;
     background-position: left;
 }

@@ -46,6 +46,11 @@ body.open {
 }
 
 .app-bar-container {
+  background-image: url('/images/mt-eden_colour.png');
+  background-repeat: repeat-x;
+  background-position: left;
+  color: #594D4D;
+  text-shadow: 2px 2px 2px grey;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;

@@ -6,12 +6,12 @@
 <br/>
 <div class="slideshow">
     <ul id="slider">
-        <li><img src="images/projects/yellow-homepage.png" alt="" border="0"/></li>
-        <li><img src="images/projects/stellarlibrary-home.png" alt="" border="0"/></li>
-        <li><img src="images/projects/wrappz.co.nz-images.png" alt="" border="0"/></li>
-        <li><img src="images/projects/nakedgym-home.png" alt="" border="0"/></li>
-        <li><img src="images/projects/ferrit-search-ipods.png" alt="" border="0"/></li>
-        <li><img src="images/projects/createaposter.com.au-bartel-other.png" alt="" border="0"/></li>
+        <li><img src="/images/projects/yellow-homepage.png" alt="" border="0"/></li>
+        <li><img src="/images/projects/stellarlibrary-home.png" alt="" border="0"/></li>
+        <li><img src="/images/projects/wrappz.co.nz-images.png" alt="" border="0"/></li>
+        <li><img src="/images/projects/nakedgym-home.png" alt="" border="0"/></li>
+        <li><img src="/images/projects/ferrit-search-ipods.png" alt="" border="0"/></li>
+        <li><img src="/images/projects/createaposter.com.au-bartel-other.png" alt="" border="0"/></li>
     </ul>
 </div>
 <br/>
@@ -63,42 +63,38 @@ new <a href="http://en.wikipedia.org/wiki/Platform_as_a_service" target="_blank"
 <br/>
 
 <hr/>
-<h2><a href="/posts.html">What are we thinking?</a></h2>
+<h2>What are we up to?</h2>{{site.urlRoot}}
 <section class="blog_excerpt">
-	{% for post in site.posts %}
+	{% for post in site.projects %}
 		<article>
-		{% if loop.index < 4 %}
+		{% if loop.index < 2 %}
 		<h3>{{post.title}}</h3>
 		<p>{{post.content|truncate(300)|safe}}</p>
-		<a href="{{site.url}}{{post.url}}">Read more&hellip;</a>
+		<a href="{{site.urlRoot}}{{post.url}}">Read more...</a>
+		{% endif %}
+		</article>
+	{% endfor %}
+	{% for post in site.posts %}
+		<article>
+		{% if loop.index < 2 %}
+		<h3>{{post.title}}</h3>
+		<p>{{post.content|truncate(300)|safe}}</p>
+		<a href="{{site.urlRoot}}{{post.url}}">Read more...</a>
 		{% endif %}
 		</article>
 	{% endfor %}
 </section>
 
-<hr/>
-<h2><a href="/projects.html">What are we up to?</a></h2>
-<section class="blog_excerpt">
-	{% for post in site.projects %}
-		<article>
-		{% if loop.index < 4 %}
-		<h3>{{post.title}}</h3>
-		<p>{{post.content|truncate(300)|safe}}</p>
-		<a href="{{site.url}}{{post.url}}">Read more&hellip;</a>
-		{% endif %}
-		</article>
-	{% endfor %}
-</section>
 
 {% endblock main %}
 
 {% block extra_css %}
-<link href="styles/anythingslider.css" rel="stylesheet">
+<link href="/styles/anythingslider.css" rel="stylesheet">
 {% endblock extra_css %}
 
 {% block javascript %}
-<script src="scripts/jquery-1.7.1.js"></script>
-<script src="scripts/jquery.anythingslider.js"></script>
+<script src="/scripts/jquery-1.7.1.js"></script>
+<script src="/scripts/jquery.anythingslider.js"></script>
 <script type="text/javascript">
 $(document).ready( function(){
     $('#slider').anythingSlider({ 

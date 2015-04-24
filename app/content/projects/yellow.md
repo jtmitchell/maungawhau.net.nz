@@ -13,6 +13,8 @@ image_caption: YellowPages
 ## Client: Yellow Pages
 ### March 2013 to March 2015
 
+![YellowPages](/images/projects/yellowpages.png)
+
 At [Yellow Pages](http://www.yellowpages.co.nz)
 we are involved in BAU defect fixes and rolling out the updated
 versions of legacy sites.

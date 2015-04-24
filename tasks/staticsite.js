@@ -12,6 +12,7 @@ var marked = require('gulp-marked');
 var gulp = require('gulp');
 var path = require('path');
 var rename = require('gulp-rename');
+var gutil = require('gulp-util');
 
 var site = {
 		'title': 'Maungawhau IT',
@@ -74,8 +75,8 @@ gulp.task('posts', ['cleanposts'], function () {
         .pipe(summarize('<!--more-->'))
         // Collect all the posts and place them on the site object.
         .pipe((function () {
-            var posts = []
-            var tags = []
+            var posts = [];
+            var tags = site.tags || [];
             return through.obj(function (file, enc, cb) {
                 file.page.url = 'posts/' + path.basename(file.path, '.md');
                 posts.push(file.page);
@@ -118,9 +119,20 @@ gulp.task('projects', function () {
         // Collect all the projects and place them on the site object.
         .pipe((function () {
             var projects = [];
+            var tags = site.tags || [];
             return through.obj(function (file, enc, cb) {
+                file.page.url = 'projects/' + path.basename(file.path, '.md');
                 projects.push(file.page);
                 projects[projects.length - 1].content = file.contents.toString();
+                
+                if (file.page.tags) {
+                    file.page.tags.forEach(function (tag) {
+                        if (tags.indexOf(tag) === -1) {
+                            tags.push(tag);
+                        }
+                    });
+                }
+
                 this.push(file);
                 cb();
             },
@@ -129,6 +141,7 @@ gulp.task('projects', function () {
                 	return b.date - a.date;
                 })
                 site.projects = projects;
+                site.tags = tags;
                 cb();
             })
         })())
@@ -199,4 +212,34 @@ gulp.task('sitemap', ['posts', 'pages', 'projects'], function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('content', ['posts', 'projects', 'pages', 'rss', 'sitemap']);
+function tags() {    
+	var stream = through.obj(function(file, enc, cb) {
+		this.push(file);
+		cb();
+	});
+    
+	if (site.tags) {
+		site.tags.forEach(function (tag) {
+			var file = new gutil.File({
+				path: tag + '.html',
+				contents: new Buffer('')
+			});
+			file.page = {title: tag, tag: tag}
+            
+			stream.write(file);        
+		});
+	}
+  
+	stream.end();
+	stream.emit("end");
+
+	return stream;
+}
+
+gulp.task('tags', ['posts', 'projects'], function () {
+    return tags()
+        .pipe(applyTemplate('app/assets/templates/tag.html'))
+        .pipe(gulp.dest('dist/tag'));
+});
+
+gulp.task('content', ['posts', 'projects', 'pages', 'tags', 'rss', 'sitemap']);

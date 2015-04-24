@@ -14,6 +14,8 @@ image_caption: Ferrit
 ## Client: Telecom NZ
 ### October 2006 to February 2009
 
+![Ferrit](/images/projects/ferrit-cameras.png)
+
 We worked on Telecom's Ferrit online shopping site to deliver new capabilities, such as search and direct bank deposit payments,
 and to support the huge Perl-based application.
 <!--more-->

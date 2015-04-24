@@ -23,13 +23,13 @@ and [The Corner Dairy](http://www.thecornerdairy.co.nz).
 
 For [Create A Poster](http://afl.createaposter.com.au) we needed to make the clubs pages use the club logo
 colours.
-![Club Page - background and logo vary according to the club](images/projects/createaposter.com.au-suns.png)
+![Club Page - background and logo vary according to the club](/images/projects/createaposter.com.au-suns.png)
 
 Then we needed a dynamic way to show what poster you are buying as you select your customisable options.
-![Custom Poster - initial page](images/projects/createaposter.com.au-bartel.png)
-![Custom Poster - choose a background](images/projects/createaposter.com.au-bartel-bkg.png)
-![Custom Poster - choose a style for the name](images/projects/createaposter.com.au-bartel-name.png)
-![Custom Poster - choose another combination](images/projects/createaposter.com.au-bartel-other.png)
+![Custom Poster - initial page](/images/projects/createaposter.com.au-bartel.png)
+![Custom Poster - choose a background](/images/projects/createaposter.com.au-bartel-bkg.png)
+![Custom Poster - choose a style for the name](/images/projects/createaposter.com.au-bartel-name.png)
+![Custom Poster - choose another combination](/images/projects/createaposter.com.au-bartel-other.png)
 
 
 Projects that did not make it into production are a cartoon site, a chemicals site, and a book covers site.

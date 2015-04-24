@@ -37,13 +37,13 @@
     -->
 
     <!-- Page styles -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css">
     {% block extra_css %}{% endblock %}
   </head>
   <body class="{{page.nav}}">
     <header class="app-bar promote-layer">
       <div class="app-bar-container">
-        <button class="menu"><img src="images/hamburger.svg" alt="Menu"></button>
+        <button class="menu"><img src="/images/hamburger.svg" alt="Menu"></button>
         <h1 class="logo">{{site.title}}</h1>
         <section class="app-bar-actions">
         {% block app-bar-actions %}
@@ -105,7 +105,7 @@
     </main>
 
     <!-- build:js scripts/main.min.js -->
-    <script src="scripts/main.js"></script>
+    <script src="/scripts/main.js"></script>
     {% block javascript %}{% endblock %}
     <!-- endbuild -->
 
