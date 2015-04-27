@@ -49,6 +49,21 @@
         {% block app-bar-actions %}
         <!-- Put App Bar Buttons Here -->
         <!-- e.g <button><i class="icon icon-star"></i></button> -->
+	<div id="twitter_share">
+	<a href="http://twitter.com/share"
+	    class="twitter-share-button"
+	    data-count="vertical"
+	    data-via="{{ tweet_via }}">Tweet</a>
+	    <script type="text/javascript"
+	        src="http://platform.twitter.com/widgets.js"></script>
+	</div>
+	<div id="facebook_like">
+	<iframe src="http://www.facebook.com/plugins/like.php?href&amp;layout=box_count&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=65"
+	            scrolling="no"
+	            frameborder="0"
+	            style="border:none; overflow:hidden; width:450px; height:65px;"
+	            allowTransparency="true"></iframe>
+	</div>
         {% endblock %}
         </section>
       </div>
@@ -73,34 +88,19 @@
     </nav>
 
 	{% block share %}
-	<div id="twitter_share">
-	<a href="http://twitter.com/share"
-	    class="twitter-share-button"
-	    data-count="vertical"
-	    data-via="{{ tweet_via }}">Tweet</a>
-	    <script type="text/javascript"
-	        src="http://platform.twitter.com/widgets.js"></script>
-	</div>
-	<div id="facebook_like">
-	<iframe src="http://www.facebook.com/plugins/like.php?href&amp;layout=box_count&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=65"
-	            scrolling="no"
-	            frameborder="0"
-	            style="border:none; overflow:hidden; width:450px; height:65px;"
-	            allowTransparency="true"></iframe>
-	</div>
 	{% endblock %}
 	
     <main>
 				
 		{% block main %}
-		<section class="content">
-			<h1>{{page.title}}</h1>
+		<section>
+			<h1>{{page.title|title}}</h1>
 			<div class="page-content">{% block content %}{% endblock %}</div>
 		</section> 
 		{% endblock %}
 				
 		<footer>
-			Copyright &copy; 2014-{{site.time|date('Y')}} Maungawhau Information Technology Ltd. All rights reserved.
+			<p>Copyright &copy; 2014-{{site.time|date('Y')}} Maungawhau Information Technology Ltd. All rights reserved.</p>
 		</footer>
     </main>
 

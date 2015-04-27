@@ -1,6 +1,8 @@
 ---
 title: TelstraClear
 description: TelstraClear
+client: TelstraClear
+period: June 2004 to September 2005
 created: 2005-10-01
 tags:
     - telstraclear
@@ -10,8 +12,6 @@ tags:
     - dns
     - soap
 ---
-## Client: TelstraClear
-### June 2004 to September 2005
 
 We worked with the Auckland Operations group to update a log capture and
 analysis tool to provide greater flexibility and to run on Solaris.

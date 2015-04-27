@@ -8,7 +8,7 @@
                 <a href="/tag/{{tag}}.html">{{tag}}</a>
             {% endfor %}
         </div>
-        <h3 class="published">{{page.date|date('M j, Y')}}</h3>
+        <h3 class="published">{{page.created|date('M j, Y')}}</h3>
     </header>
 	{{content|safe}}
 </article>

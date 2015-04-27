@@ -2,6 +2,9 @@
 title: Yellow Pages
 description: Yellow Pages
 created: 2013-03-04
+client: Yellow Pages
+start: March 2013
+end: March 2015
 tags:
     - yellowpages
     - website
@@ -10,8 +13,6 @@ tags:
 image: yellowpages.png
 image_caption: YellowPages
 ---
-## Client: Yellow Pages
-### March 2013 to March 2015
 
 ![YellowPages](/images/projects/yellowpages.png)
 

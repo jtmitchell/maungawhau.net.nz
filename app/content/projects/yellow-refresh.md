@@ -1,6 +1,9 @@
 ---
 title: Yellow Pages Refresh
 description: Visual Refresh of Yellow Pages
+client: Yellow Pages
+start: March 2013
+end: March 2015
 created: 2014-06-04
 tags:
     - yellowpages
@@ -12,8 +15,6 @@ tags:
 image: yellow-homepage.png
 image_caption: Yellow Homepage
 ---
-## Client: Yellow Pages
-### March 2013 to March 2015
 
 ![Yellow Homepage](/images/projects/yellow-homepage.png)
 

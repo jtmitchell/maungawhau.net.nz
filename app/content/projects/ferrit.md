@@ -1,6 +1,9 @@
 ---
 title: Shopping at Ferrit
 description: Shopping at Ferrit
+client: Telecom NZ
+start: October 2006
+end: February 2009
 created: 2009-03-01
 tags:
     - telecom
@@ -11,8 +14,6 @@ tags:
 image: ferrit-cameras.png
 image_caption: Ferrit
 ---
-## Client: Telecom NZ
-### October 2006 to February 2009
 
 ![Ferrit](/images/projects/ferrit-cameras.png)
 

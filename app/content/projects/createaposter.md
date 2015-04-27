@@ -1,6 +1,9 @@
 ---
 title: Create A Poster
 description: Team Posters at Fujifilm
+client: Fujifilm NZ
+start: December 2009
+end: July 2012
 created: 2012-08-01
 tags:
     - fujifilm
@@ -11,8 +14,6 @@ tags:
 image: createaposter.com.au-cats.png
 image_caption: Create A Poster
 ---
-## Client: Fujifilm NZ
-### December 2009 to July 2012
 
 After starting with the wrappz.co.nz site, we continued working with Fujifilm NZ
 to create new shopping sites.

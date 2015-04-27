@@ -1,6 +1,8 @@
 ---
 title: System Backups
 description: UNL Backups
+client: United Networks Ltd.
+start: July 2002
 created: 2002-08-01
 tags:
     - unl
@@ -8,8 +10,6 @@ tags:
     - shell
     - backups
 ---
-## Client: United Networks Ltd.
-### July 2002
 
 
 Installed and integrated software to provide an emergency re-installation

@@ -1,6 +1,9 @@
 ---
 title: .NET meets DNS
 description: .NET meets DNS
+client: Woosh Wireless
+start: November 2005
+end: February 2006
 created: 2006-03-01
 tags:
     - woosh
@@ -8,8 +11,6 @@ tags:
     - linux
     - dns
 ---
-## Client: Woosh Wireless
-### November 2005 to February 2006
 
 
 We developed an interface between the Woosh .NET environment and backend

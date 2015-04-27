@@ -1,6 +1,9 @@
 ---
 title: Wrappz
 description: Wrappz at Fujifilm NZ
+client: Fujifilm NZ
+start: December 2009
+end: July 2012
 created: 2010-12-01
 tags:
     - fujifilm
@@ -11,8 +14,6 @@ tags:
 image: wrappz.co.nz-samples.png
 image_caption: Wrappz samples
 ---
-## Client: Fujifilm NZ
-### December 2009 to July 2012
 
 
 We worked on the Wrappz.co.nz project (using PHP and MySQL), to cleanup code licensed from the U.K.

@@ -95,7 +95,7 @@ gulp.task('posts', ['cleanposts'], function () {
             },
             function (cb) {
                 posts.sort(function (a, b) {
-                    return b.date - a.date;
+                    return b.created - a.created;
                 });
                 site.posts = posts;
                 site.tags = tags;
@@ -116,6 +116,7 @@ gulp.task('projects', function () {
     var projects = gulp.src('app/content/projects/**/*.md')
         .pipe(frontMatter({property: 'page', remove: true}))
         .pipe(marked())
+        .pipe(summarize('<!--more-->'))
         // Collect all the projects and place them on the site object.
         .pipe((function () {
             var projects = [];
@@ -138,7 +139,7 @@ gulp.task('projects', function () {
             },
             function (cb) {
                 projects.sort(function (a, b) {
-                	return b.date - a.date;
+                	return b.created - a.created;
                 })
                 site.projects = projects;
                 site.tags = tags;
@@ -224,7 +225,7 @@ function tags() {
 				path: tag + '.html',
 				contents: new Buffer('')
 			});
-			file.page = {title: tag, tag: tag}
+			file.page = {title: tag, tag: tag, nav: tag};
             
 			stream.write(file);        
 		});

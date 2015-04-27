@@ -4,8 +4,16 @@
 
 {% block content %}
 <article>
-	{% for post in site.projects %}
-		{% include "include/project_snippet.html" %}
-	{% endfor %}
+	<div class="related-items clear">
+		<div class="related-items__section clear>
+			<ul class="related-items-list list-reset">		
+			{% for post in site.projects %}
+				<li class="g-medium--half g-wide--1">
+				{% include "include/project_snippet.html" %}
+				</li>
+			{% endfor %}
+			</ul>
+		</div>
+	</div>
 </article>
 {% endblock %}

@@ -1,14 +1,15 @@
 ---
 title: Network Monitoring
 description: UNL Network Monitoring
+client: United Networks Ltd.
+start: March 2002
+end: May 2002
 created: 2002-08-01
 tags:
     - unl
     - linux
     - network_monitoring
 ---
-## Client: United Networks Ltd.
-### March 2002 to May 2002
 
 We migrated network monitoring software from a trial
 laptop setup running on NT, to a full production setup on Linux, providing

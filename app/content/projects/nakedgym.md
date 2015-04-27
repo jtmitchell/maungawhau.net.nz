@@ -1,6 +1,9 @@
 ---
 title: The Naked Gym
 description: The Naked Gym
+client: Consortium
+start: April 2009
+end: August 2009
 created: 2009-09-01
 tags:
     - consortium
@@ -10,8 +13,6 @@ tags:
 image: nakedgym-home.png
 image_caption: The NakedGym
 ---
-## Client: Consortium
-### April 2009 to August 2009
 
 ![The NakedGym](/images/projects/nakedgym-home.png)
 

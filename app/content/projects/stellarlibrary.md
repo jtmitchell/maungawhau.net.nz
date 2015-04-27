@@ -1,6 +1,9 @@
 ---
 title: StellarLibrary
 description: StellarLibrary
+client: Stellar Software
+start: September 2012
+end: February 2013
 created: 2012-12-03
 tags:
     - stellarlibrary
@@ -11,8 +14,6 @@ tags:
 image: stellarlibrary-home.png
 image_caption: StellarLibrary
 ---
-## Client: Stellar Software
-### September 2012 to February 2013
 
 ![StellarLibrary](/images/projects/stellarlibrary-home.png)
 

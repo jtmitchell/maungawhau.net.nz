@@ -5,7 +5,9 @@
 {% block content %}
 <article>
 	{% for post in site.posts %}
+	<div class="g-wide--2 g-medium--2">
 		{% include "include/post_snippet.html" %}
+	</div>
 	{% endfor %}
 </article>
 {% endblock %}
