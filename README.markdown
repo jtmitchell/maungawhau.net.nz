@@ -1,4 +1,4 @@
-# Maungawhay IT
+# Maungawhau IT
 
 A code for [Maungawhau IT](http://www.maungawhau.net.nz/) using hyde-bootstrap.
 
