@@ -3,11 +3,9 @@
 {% set page.nav = "posts" %}
 
 {% block content %}
-<article>
-	{% for post in site.posts %}
-	<div class="g-wide--2 g-medium--2">
+{% for post in site.posts %}
+	<article class="g--half {% if (loop.index % 2) == 0 %}g--last{% endif %}">
 		{% include "include/post_snippet.html" %}
-	</div>
-	{% endfor %}
-</article>
+	</article>
+{% endfor %}
 {% endblock %}

@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% set page.nav = "home" %}
 {% block content %}
+<section>
 <h2>Quality IT Services</h2>
 <p>Maungawhau IT has been providing quality IT services since 2002.</p>
 <br/>
 <div class="slideshow">
-    <ul id="slider">
+    <ul id="slider" class="list-links">
         <li><img src="/images/projects/yellow-homepage.png" alt="" border="0"/></li>
         <li><img src="/images/projects/stellarlibrary-home.png" alt="" border="0"/></li>
         <li><img src="/images/projects/wrappz.co.nz-images.png" alt="" border="0"/></li>
@@ -14,8 +15,9 @@
         <li><img src="/images/projects/createaposter.com.au-bartel-other.png" alt="" border="0"/></li>
     </ul>
 </div>
-<br/>
+</section>
 
+<section>
 <h2>Small is Beautiful</h2>
 <br/>
 <p>We are a small company, able to be both flexible and agile in development.</p>
@@ -35,17 +37,17 @@ Projects which can be easily summarised and understood - so our customer knows w
 
 <p>For clients including...</p>
 
-<ul class="indent">
+<ul>
     <li>Yellow Pages</li>
     <li>Fujifilm NZ</li>
     <li>Telecom NZ</li>
     <li>TelstraClear</li>
     <li>Woosh Wireless</li>
 </ul>
+</section>
 
-<br/>
+<section>
 <h2>Tools of the Trade</h2>
-<br/>
 <p>Maungawhau IT specialises in all things Unix and Linux. 
 This leads naturally to webservers, e-commerce, and all things Internet.</p>
 
@@ -55,33 +57,32 @@ Optionally you may prefer Red Hat, Perl, PHP, or PostgreSQL.
 Pick one of Apache, Cherokee, or nginx.
 </p>
 <p>
-The new excitement is 
+The new excitement in infrastructure is 
 <a href="http://cloudfoundry.org/index.html" target="_blank">Cloud Foundry</a>
-and <a href="http://www.activestate.com/stackato" target="_blank">Stackato</a>, 
-new <a href="http://en.wikipedia.org/wiki/Platform_as_a_service" target="_blank">PaaS</a> clouds.
+and <a href="http://www.activestate.com/stackato" target="_blank">Stackato</a>
+for delivering <a href="http://en.wikipedia.org/wiki/Platform_as_a_service" target="_blank">PaaS</a> clouds.
 </p>
-<br/>
+</section>
 
-<hr/>
-<section class="blog_excerpt">
-	{% for post in site.projects %}
-		<article>
-		{% if loop.index < 2 %}
-		<h3>{{post.title}}</h3>
-		<p>{{post.content|truncate(300)|safe}}</p>
-		<a href="{{site.urlRoot}}{{post.url}}">Read more...</a>
-		{% endif %}
-		</article>
-	{% endfor %}
-	{% for post in site.posts %}
-		<article>
-		{% if loop.index < 2 %}
-		<h3>{{post.title}}</h3>
-		<p>{{post.content|truncate(300)|safe}}</p>
-		<a href="{{site.urlRoot}}{{post.url}}">Read more...</a>
-		{% endif %}
-		</article>
-	{% endfor %}
+<section>
+<h2>Recent posts and activity</h2>
+<div class="blog_excerpt">
+{% for post in site.posts %}
+	{% if loop.index <= 4 %}
+	<article class="g--half {% if (loop.index % 3) == 0 %}g--last{% endif %}">
+		{% include "include/post_snippet.html" %}
+	</article>
+	{% endif %}
+	<div class="clear"></div>
+{% endfor %}
+{% for post in site.projects %}
+	{% if loop.index <= 3 %}
+	<article class="g--third {% if (loop.index % 3) == 0 %}g--last{% endif %}">
+		{% include "include/project_snippet.html" %}
+	</article>
+	{% endif %}
+{% endfor %}
+</div>
 </section>
 
 

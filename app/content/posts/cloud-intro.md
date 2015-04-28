@@ -3,6 +3,8 @@ title: What the Cloud means to me
 description: First thoughts about cloud deployment
 created: 2014-06-04 21:00:00
 comments: true
+image: stackato-cake-diagram.png
+image_caption: Stackato cake diagram
 tags:
     - cloud
     - paas
@@ -14,7 +16,7 @@ tags:
 The Cloud, and specifically PaaS, has become a very exciting space to be in... but what advantage does it bring? And what is the difference between the Amazon EC2 cloud, and the Heroku or Cloud Foundry clouds?
 <!--more-->
 
-# Defining a Cloud
+## Defining a Cloud
 
 The meaning of cloud has been evolving for some time. The initial definition was just having a server co-located in a server room
 somewhere off site, and that rapidly morphed into having a virtual server running on someone's (usually Amazon's) real hardware.
@@ -22,7 +24,7 @@ In this case, putting your data or application in *the cloud* means doing all th
 
 That isn't what I mean by _cloud_
 
-# IaaS vs PaaS
+## IaaS vs PaaS
 
 [Infrastructure-as-a-Service][iaas] is pretty darn wonderful, and it enabled a huge leap forward in web services. I'm thinking here about how Google uses large clusters of "disposable" servers which their services run on top of. Or how Amazon revolutionised the industry by renting out their virtual EC2 servers.
 
@@ -35,7 +37,7 @@ If Heroku can do it, why can't I?
 
 I *can* - and PaaS is the tool to make it happen.
 
-# Defining the PaaS
+## Defining the PaaS
 
 After doing a few searches, I settled on [Cloud Foundry][cf] as a good PaaS choice, and specifically the version that ActiveState offer, [Stackato][stackato]. Cloud Foundry is a suite of software that needs to be built, installed, and configured (perhaps on that nice IaaS you have?) - and Stackato is all that goodness packaged up into a VM image ready for instant deployment on AWS, OpenStack, or vSphere.
 
@@ -65,7 +67,7 @@ The shiny new Cloud Foundry cloud will now
 
 ![Stackato Cloud](/images/posts/stackato-cake-diagram.png)[Stackato cake diagram]
 
-# But wait! There's more!
+## But wait! There's more!
 
 For the next blog, we'll think about how to use the new shiny toys and add some Jenkins and Git magic to support an enterprise-style deployment.
 
