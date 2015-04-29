@@ -17,16 +17,17 @@
                 <a href="/tag/{{tag}}.html">{{tag}}</a>{% if not loop.last %} / {% endif %}
             {% endfor %}
         </span>
+    </p>
 
-        </p>
 {% if page.share %}
-		<div id="fb-root"></div>
-		<div class="social-share">
-			<a href="{{site.url}}/rss.xml" target="_blank"><img src="/images/icons/feed-icon-28x28.png" alt="Subscribe"/></a>
-			<a class="twitter-share-button" href="https://twitter.com/share" data-count="horizontal"></a>
-			<div class="fb-like" data-href="{{site.url}}/{{page.url}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-			<div class="g-plusone" data-size="medium"></div>
-		</div>
+<span class="social-share">
+<ul>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u={{site.url}}/{{page.url}}" title="Share on Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+    <li><a href="http://www.linkedin.com/shareArticle?mini=true&url={{site.url}}/{{page.url}}&title=&summary={{page.description}}" title="Share on LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+    <li><a href="http://twitter.com/intent/tweet?via={{site.twitter}}&url={{site.url}}/{{page.url}}&text={{page.description}}" title="Share on Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    <li><a href="https://plus.google.com/share?url={{site.url}}/{{page.url}}" title="Share on Google+" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+</ul>
+</span>
 {% endif %}
     </header>
 	{{content|safe}}
@@ -43,19 +44,7 @@
 {%- endblock %}
 
 {% block javascript %}
-{% if page.share %}
-<script>
-window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-</script>
-
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
+{% if page.comments %}
 <script src="https://apis.google.com/js/plusone.js"></script>
 {% endif %}
 {% endblock %}
