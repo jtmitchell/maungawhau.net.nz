@@ -157,7 +157,7 @@ gulp.task('serve', ['styles', 'content'], function () {
 //  gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['jshint']);
-  gulp.watch(['app/images/**/*'], reload);
+  gulp.watch(['app/images/**/*'], ['images', reload]);
   
   // watch for static aite changes
   gulp.watch(['app/assets/templates/**'], ['content', reload]);
@@ -180,11 +180,11 @@ gulp.task('serve:dist', ['default'], function () {
 //gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['jshint']);
-  gulp.watch(['app/images/**/*'], reload);
+  gulp.watch(['app/images/**/*'], ['images', reload]);
   
   // watch for static aite changes
   gulp.watch(['app/assets/templates/**'], ['content', reload]);
-  gulp.watch(['app/content/pages/**', 'app/content/projects/**'], ['pages', 'sitemap', reload]);
+  gulp.watch(['app/content/pages/**', 'app/content/projects/**'], ['pages', 'rss', 'sitemap', reload]);
   gulp.watch(['app/content/posts/**'], ['posts', 'rss', 'sitemap', reload]);
   gulp.watch(['app/content/projects/**'], ['projects', 'rss', 'sitemap', reload]);
 });

@@ -184,7 +184,7 @@ gulp.task('pages', ['cleanpages', 'projects'], function () {
 });
 
 gulp.task('rss', ['posts'], function () {
-    return gulp.src(['assets/templates/atom.xml'])
+    return gulp.src(['app/content/pages/rss.xml'])
         .pipe(through.obj(function (file, enc, cb) {
             var data = {
                 site: site,
@@ -199,7 +199,7 @@ gulp.task('rss', ['posts'], function () {
 });
 
 gulp.task('sitemap', ['posts', 'pages', 'projects'], function () {
-    return gulp.src(['assets/templates/sitemap.xml'])
+    return gulp.src(['app/content/pages/sitemap.xml'])
         .pipe(through.obj(function (file, enc, cb) {
             var data = {
                 site: site,

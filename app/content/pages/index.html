@@ -17,7 +17,7 @@
 </div>
 </section>
 
-<section>
+<section class="line-divide">
 <h2>Small is Beautiful</h2>
 <br/>
 <p>We are a small company, able to be both flexible and agile in development.</p>
@@ -46,7 +46,7 @@ Projects which can be easily summarised and understood - so our customer knows w
 </ul>
 </section>
 
-<section>
+<section class="line-divide">
 <h2>Tools of the Trade</h2>
 <p>Maungawhau IT specialises in all things Unix and Linux. 
 This leads naturally to webservers, e-commerce, and all things Internet.</p>
@@ -68,20 +68,21 @@ for delivering <a href="http://en.wikipedia.org/wiki/Platform_as_a_service" targ
 </p>
 </section>
 
-<section>
+<section class="line-divide">
 <h2>Recent posts and activity</h2>
 <div class="blog_excerpt">
+{% set counter = 0 %}
 {% for post in site.posts %}
-	{% if loop.index <= 4 %}
-	<article class="g--half {% if (loop.index % 3) == 0 %}g--last{% endif %}">
+	{% if loop.index <= 3 %}{% set counter = counter + 1 %}
+	<article class="g--third {% if (counter % 3) == 0 %}g--last{% endif %}">
 		{% include "include/post_snippet.html" %}
 	</article>
 	{% endif %}
-	<div class="clear"></div>
 {% endfor %}
+{% set maxprojects = 6 - counter %}
 {% for post in site.projects %}
-	{% if loop.index <= 3 %}
-	<article class="g--third {% if (loop.index % 3) == 0 %}g--last{% endif %}">
+	{% if loop.index <= maxprojects %}{% set counter = counter + 1 %}
+	<article class="g--third {% if (counter % 3) == 0 %}g--last{% endif %}">
 		{% include "include/project_snippet.html" %}
 	</article>
 	{% endif %}

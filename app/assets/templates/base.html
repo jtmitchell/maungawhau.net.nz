@@ -46,9 +46,10 @@
         <button class="menu"><img src="/images/hamburger.svg" alt="Menu"></button>
         <h1 class="logo">{{site.title}}</h1>
         <section class="app-bar-actions">
-        {% block app-bar-actions %}
         <!-- Put App Bar Buttons Here -->
         <!-- e.g <button><i class="icon icon-star"></i></button> -->
+        <button><span class="icon-circle themed--background"><i class="icon icon-star"></i></span></button>
+        {% block app-bar-actions %}
         {% endblock %}
         </section>
       </div>
@@ -73,10 +74,6 @@
     </nav>
 
 	<div class="clear"></div>
-	{% block share %}
-	{% endblock %}
-	
-	<div class="clear"></div>
     <main>
 				
 		{% block main %}
@@ -87,8 +84,11 @@
 		{% endblock %}
 				
 		<div class="clear"></div>
+		{% block share %}
+		{% endblock %}
+	
 		<footer class="small">
-			<p>Copyright &copy; 2014-{{site.time|date('Y')}} Maungawhau Information Technology Ltd. All rights reserved.</p>
+			<p>&copy; Copyright 2014-{{site.time|date('Y')}} Maungawhau Information Technology Ltd. All rights reserved.</p>
 		</footer>
     </main>
 
