@@ -2,6 +2,7 @@
 title: What the Cloud means to me
 description: First thoughts about cloud deployment
 created: 2014-06-04 21:00:00
+share: true
 comments: true
 image: stackato-cake-diagram.png
 image_caption: Stackato cake diagram

@@ -3,41 +3,59 @@
 {% block content -%}
 <article class="post">
 	<header>
-        <div class="tags">{% if page.tags %}Tags: {% endif %}
+{% if page.client %}
+		<p class="large">Client: {{page.client}}, 
+			<span class="medium">
+			{{page.start}}{% if page.end %} to {{page.end}}{% endif %}
+			</span>
+		</p>
+{% else %}
+        <p class="published">{{page.created|date('M j, Y')}}<br/>
+{% endif %}
+        <span class="small">{% if page.tags %}Tags: {% endif %}
             {% for tag in page.tags %}
                 <a href="/tag/{{tag}}.html">{{tag}}</a>{% if not loop.last %} / {% endif %}
             {% endfor %}
-        </div>
-        <h3 class="published">{{page.created|date('M j, Y')}}</h3>
+        </span>
+
+        </p>
+{% if page.share %}
+		<div id="fb-root"></div>
+		<div class="social-share">
+			<a href="{{site.url}}/rss.xml" target="_blank"><img src="/images/icons/feed-icon-28x28.png" alt="Subscribe"/></a>
+			<a class="twitter-share-button" href="https://twitter.com/share" data-count="horizontal"></a>
+			<div class="fb-like" data-href="{{site.url}}/{{page.url}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+			<div class="g-plusone" data-size="medium"></div>
+		</div>
+{% endif %}
     </header>
 	{{content|safe}}
 </article>
+
 {% if page.comments %}
-<script src="https://apis.google.com/js/plusone.js">
-</script>
+<h3 class="line-divide large">Comments</h3>
 <div class="g-comments"
-    data-href="{{site.url}}{{post.url}}"
-    data-width="642"
+    data-href="{{site.url}}/{{page.url}}"
     data-first_party_property="BLOGGER"
     data-view_type="FILTERED_POSTMOD">
 </div>
 {% endif %}
 {%- endblock %}
 
-{% block share %}
-<div id="twitter_share">
-<a href="http://twitter.com/share"
-    class="twitter-share-button"
-    data-count="vertical"
-    data-via="{{ tweet_via }}">Tweet</a>
-    <script type="text/javascript"
-        src="http://platform.twitter.com/widgets.js"></script>
-</div>
-<div id="facebook_like">
-<iframe src="http://www.facebook.com/plugins/like.php?href&amp;layout=box_count&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=65"
-            scrolling="no"
-            frameborder="0"
-            style="border:none; overflow:hidden; width:450px; height:65px;"
-            allowTransparency="true"></iframe>
-</div>
+{% block javascript %}
+{% if page.share %}
+<script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script src="https://apis.google.com/js/plusone.js"></script>
+{% endif %}
 {% endblock %}

@@ -20,6 +20,7 @@ var site = {
 	    'urlRoot': '/',
 	    'author': 'James Mitchell',
 	    'email': 'james.mitchell@maungawhau.net.nz',
+	    'twitterUrl': 'https://twitter.com/saywibble',
 	    'google_verify': 'ly8QgWAy0wwtyg5EoDAcuzhxRvsglDkNS740NVwHLco',
 	    'analytics_id': '',
 	    'time': new Date()

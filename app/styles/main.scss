@@ -254,6 +254,14 @@ main {
 
 .shadow { box-shadow: 1px 1px 2px #888888; }
 
+.social-share { font-size: 1px; }
+.social-share iframe { vertical-align: middle; }
+.fb-share-button { margin-right: 20px; }
+.social-share span {
+	display: inline-block;
+	width: 110px;
+}
+
 /** Larger Screens - desktops and tablets **/
 @media all and (min-width: 990px) {
   .app-bar {

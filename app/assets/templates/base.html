@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="{{site.author}}">
+    {% if site.twitterUrl %}<link rel="me" href="{{site.twitterUrl}}">{% endif %}
     <meta name="description" content="{{page.description}}">
 {% if site.google_verify %}
     <meta name="google-site-verification" content="{{ site.google_verify }}">
@@ -35,12 +36,17 @@
     <!--
     <link rel="canonical" href="http://www.example.com/">
     -->
-
+    
+	<!-- RSS -->
+	<link rel="alternate" type="application/rss+xml" title="{{site.title}} Posts" href="{{site.url}}/rss.xml" />
+	
     <!-- Page styles -->
     <link rel="stylesheet" href="/styles/main.css">
     {% block extra_css %}{% endblock %}
   </head>
   <body class="{{page.nav}}">
+
+	
     <header class="app-bar promote-layer">
       <div class="app-bar-container">
         <button class="menu"><img src="/images/hamburger.svg" alt="Menu"></button>
@@ -48,10 +54,9 @@
         <section class="app-bar-actions">
         <!-- Put App Bar Buttons Here -->
         <!-- e.g <button><i class="icon icon-star"></i></button> -->
-        <button><span class="icon-circle themed--background"><i class="icon icon-star"></i></span></button>
         {% block app-bar-actions %}
         {% endblock %}
-        </section>
+\        </section>
       </div>
     </header>
 
@@ -84,9 +89,6 @@
 		{% endblock %}
 				
 		<div class="clear"></div>
-		{% block share %}
-		{% endblock %}
-	
 		<footer class="centre small">
 			<p>&copy; Copyright 2014-{{site.time|date('Y')}} Maungawhau Information Technology Ltd. All rights reserved.</p>
 		</footer>
