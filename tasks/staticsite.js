@@ -16,7 +16,7 @@ var gutil = require('gulp-util');
 
 var site = {
 		'title': 'Maungawhau IT',
-	    'url': 'http://localhost:9000',
+	    'url': 'http://www.maungawhau.net.nz',
 	    'urlRoot': '/',
 	    'author': 'James Mitchell',
 	    'email': 'james.mitchell@maungawhau.net.nz',
@@ -26,9 +26,8 @@ var site = {
 	    'time': new Date()
 }
 
-if (argv._.indexOf('deploy') > -1) {
-    site.url = 'http://www.maungawhau.net.nz'
-    site.urlRoot = '/'
+if (argv._.indexOf('serve:dist') > -1) {
+	site.url = 'http://localhost:9000';
 }
 
 swig.setDefaults({
