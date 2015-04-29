@@ -1,15 +1,28 @@
-<p class="medium"><a href="{{post.url}}">{{post.title}}</a></p>
-{% if post.image %}
-<p><img src="/images/posts/{{post.image}}" alt="{{post.image_caption}}" title="{{post.image_caption}}" /></p>
-{% endif %}
-<p>{{post.created|date('M j, Y')}}</p>
-<p class="small">
-	{% if post.tags %}Tags: {% endif %}
-    {% for tag in post.tags %}
-        <a href="{{site.urlRoot}}tag/{{tag}}.html">{{tag}}</a>{% if not loop.last %} / {% endif %}
-    {% endfor %}
-</p>
-<p class="medium">
-    {{post.summary|striptags|truncate(300)|safe}}
-</p>
-<a class="small" href="{{site.urlRoot}}{{post.url}}">Read more...</a>
+<div class="snippet container">
+	<header class="g-wide--full g-medium--full">
+		<p class="medium">
+			<a href="{{post.url}}">{{post.title}}</a>
+		</p>
+	</header>
+	
+	<p class="g-wide--full g-medium--full">
+		<span class="g--half">
+		{% if post.image %}
+		<img src="/images/posts/{{post.image}}" alt="{{post.image_caption}}" title="{{post.image_caption}}"/>
+		{% endif %}
+		</span>
+		<span class="base">
+			{{post.created|date('M j, Y')}}
+		</span>
+		<p>
+		    {{post.summary|striptags|truncate(300)|safe}}
+		    <a class="small" href="{{site.urlRoot}}{{post.url}}">Read more...</a>
+		</p>
+		<p class="small">
+			{% if post.tags %}Tags: {% endif %}
+		    {% for tag in post.tags %}
+		        <a href="{{site.urlRoot}}tag/{{tag}}.html">{{tag}}</a>{% if not loop.last %} / {% endif %}
+		    {% endfor %}
+		</p>
+	</p>
+</div>

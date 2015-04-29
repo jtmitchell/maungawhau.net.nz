@@ -77,9 +77,9 @@
     <main>
 				
 		{% block main %}
-		<section>
+		<section class="container">
 			<h1>{{page.title|title}}</h1>
-			<div class="page-content">{% block content %}{% endblock %}</div>
+			<div>{% block content %}{% endblock %}</div>
 		</section> 
 		{% endblock %}
 				
@@ -87,7 +87,7 @@
 		{% block share %}
 		{% endblock %}
 	
-		<footer class="small">
+		<footer class="centre small">
 			<p>&copy; Copyright 2014-{{site.time|date('Y')}} Maungawhau Information Technology Ltd. All rights reserved.</p>
 		</footer>
     </main>

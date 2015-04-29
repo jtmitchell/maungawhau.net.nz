@@ -243,6 +243,17 @@ main {
 	border-top-width: 100%;
 }
 
+.centre { text-align: center;}
+.left { text-align: left; }
+.right { text-align: right; }
+
+.snippet {
+	box-shadow: 1px 1px 2px #888888;
+	margin-bottom:1em;
+}
+
+.shadow { box-shadow: 1px 1px 2px #888888; }
+
 /** Larger Screens - desktops and tablets **/
 @media all and (min-width: 990px) {
   .app-bar {
