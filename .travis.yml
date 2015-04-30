@@ -3,12 +3,13 @@ branches:
   - master
 language: node_js
 node_js:
-- '0.10'
+  'stable'
 install:
-- npm install -g gulp
-- npm install
+  - npm install -g npm
+  - npm install -g gulp
+  - npm install
 script:
-- gulp
+  - gulp
 deploy:
   provider: s3
   skip_cleanup: true
