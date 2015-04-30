@@ -13,9 +13,9 @@ script:
 deploy:
   provider: s3
   skip_cleanup: true
-  bucket: dev.maungawhau.net.nz
-  region: us-east-1
-  endpoint: dev.maungawhau.net.nz.s3-website-us-east-1.amazonaws.com
+  bucket: www.maungawhau.net.nz
+  region: ap-southeast-1
+  endpoint: www.maungawhau.net.nz.s3-website-ap-southeast-1.amazonaws.com
   acl: public_read
   local_dir: dist
   detect_encoding: true

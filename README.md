@@ -1,5 +1,7 @@
 # [Maungawhau Information Technology](http://www.maungawhau.net.nz)
 
+[![Build Status](https://travis-ci.org/jtmitchell/maungawhau.net.nz.svg?branch=master)](https://travis-ci.org/jtmitchell/maungawhau.net.nz)
+
 ## Overview
 
 This is the source for the [Maungawhau IT](http://www.maungawhau.net.nz) static website. The site is generated from markdown files and uploaded to an AWS S3 bucket for serving to the web.
