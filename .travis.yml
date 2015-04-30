@@ -1,9 +1,27 @@
-sudo: false
+branches:
+    only:
+    - master
 language: node_js
 node_js:
-  - iojs
-  - '0.12'
-  - '0.10'
-matrix:
-  allow_failures:
-    - node_js: iojs
+    - "stable"
+    - "0.10"
+install:
+    - npm install -g gulp
+    - npm install
+script:
+    - gulp
+deploy:
+    provider: s3
+#    access_key_id: "YOUR_AWS_ACCESS_KEY_HERE"
+#    secret_access_key: "YOUR_AWS_SECRET_KEY_HERE"
+    skip_cleanup: true
+#    bucket: "www.maungawhau.net.nz"
+#    region: ap-southeast-1
+#    endpoint: www.maungawhau.net.nz.s3-website-ap-southeast-1.amazonaws.com
+    bucket: "dev.maungawhau.net.nz"
+    region: us-east-1
+    endpoint: dev.maungawhau.net.nz.s3-website-us-east-1.amazonaws.com
+    acl: public_read
+    local_dir: dist
+    detect_encoding: true
+    cache_control: "max-age=604800"
