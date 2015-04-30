@@ -10,11 +10,11 @@ tags:
     - website
     - python
     - django
-image: nakedgym-home.png
+image: nakedgym-home.jpg
 image_caption: The NakedGym
 ---
 
-![The NakedGym](/images/projects/nakedgym-home.png)
+![The NakedGym](/images/projects/nakedgym-home.jpg)
 
 Worked on the nakedgym.co.nz site.
 <!--more-->

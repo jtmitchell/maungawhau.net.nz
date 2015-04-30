@@ -10,11 +10,11 @@ tags:
     - website
     - python
     - django
-image: yellowpages.png
+image: yellowpages.jpg
 image_caption: YellowPages
 ---
 
-![YellowPages](/images/projects/yellowpages.png)
+![YellowPages](/images/projects/yellowpages.jpg)
 
 At [Yellow Pages](http://www.yellowpages.co.nz)
 we are involved in BAU defect fixes and rolling out the updated

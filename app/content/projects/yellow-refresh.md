@@ -12,11 +12,11 @@ tags:
     - solr
     - python
     - django
-image: yellow-homepage.png
+image: yellow-homepage.jpg
 image_caption: Yellow Homepage
 ---
 
-![Yellow Homepage](/images/projects/yellow-homepage.png)
+![Yellow Homepage](/images/projects/yellow-homepage.jpg)
 
 [Yellow Pages](http://yellow.co.nz)
 has had a visual refresh, and we have continued to improve the reviews 
@@ -26,6 +26,6 @@ features, and extend the user experience with photo uploads, bookmarking and sav
 We have also spent time improving the search within the site, and
 tagging business pages with Google-friendly metadata and schemas.
 
-![Business listing](/images/projects/yellow-listing.png)
+![Business listing](/images/projects/yellow-listing.jpg)
 
 ![Search resutls](/images/projects/yellow-search.png)
