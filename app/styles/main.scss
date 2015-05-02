@@ -298,6 +298,11 @@ main {
     opacity: .7;
 }
 
+/** Constrain the logo image to the small header **/
+.app-bar .logo img {
+  height: 50px;
+}
+
 /** Larger Screens - desktops and tablets **/
 @media all and (min-width: 990px) {
   .app-bar {
@@ -326,6 +331,11 @@ main {
     line-height: 130px;
     font-size: 46px;
   }
+
+    /** Free the logo image to full size **/
+    .app-bar .logo img {
+      height: 100%;
+    }
 
   .app-bar-actions {
     float: right;
