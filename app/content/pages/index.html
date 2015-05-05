@@ -5,8 +5,8 @@
 <h2>Quality IT Services</h2>
 <p>Maungawhau IT has been providing quality IT services since 2002.</p>
 <br/>
-<div class="g--centered slideshow">
-    <ul id="slider" class="list-links">
+<div class="slideshow g--centered g-wide--half g-medium--full">
+    <ul id="slider" class="shadow rslides list-links">
         <li><img src="/images/projects/yellow-homepage.jpg" alt="" border="0"/></li>
         <li><img src="/images/projects/stellarlibrary-home.png" alt="" border="0"/></li>
         <li><img src="/images/projects/wrappz.co.nz-images.png" alt="" border="0"/></li>
@@ -94,35 +94,31 @@ for delivering <a href="http://en.wikipedia.org/wiki/Platform_as_a_service" targ
 {% endblock main %}
 
 {% block extra_css %}
-<link href="/styles/anythingslider.css" rel="stylesheet">
+<link href="/styles/responsiveslides.css" rel="stylesheet">
 {% endblock extra_css %}
 
 {% block javascript %}
 <script src="/scripts/jquery-1.7.1.js"></script>
-<script src="/scripts/jquery.anythingslider.js"></script>
+<script src="/scripts/responsiveslides.min.js"></script>
 <script type="text/javascript">
 $(document).ready( function(){
-    $('#slider').anythingSlider({ 
-      theme               : "default",
-      mode                : "horiz",
-      expand              : false,
-      resizeContents      : true,
-      showMultiple        : false,     // Set this value to a number and it will show that many slides at once 
-      easing              : "swing",
-      buildArrows         : false,      // If true, builds the forwards and backwards buttons 
-      buildNavigation     : false,      // If true, builds a list of anchor links to link to each panel 
-      buildStartStop      : false,      // If true, builds the start/stop button       // Slideshow options 
-      autoPlay            : true,     // If true, the slideshow will start running; replaces "startStopped" option 
-      autoPlayLocked      : true,     // If true, user changing slides will not stop the slideshow 
-      autoPlayDelayed     : false,     // If true, starting a slideshow will delay advancing slides; if false, the slider will immediately advance to the next slide when slideshow starts 
-      pauseOnHover        : true,      // If true & the slideshow is active, the slideshow will pause on hover 
-      stopAtEnd           : false,     // If true & the slideshow is active, the slideshow will stop on the last page. This also stops the rewind effect when infiniteSlides is false. 
-      playRtl             : false,     // If true, the slideshow will move right-to-left 
-      delay               : 3000,      // How long between slideshow transitions in AutoPlay mode (in milliseconds) 
-      resumeDelay         : 15000,     // Resume slideshow after user interaction, only if autoplayLocked is true (in milliseconds). 
-      animationTime       : 600,       // How long the slideshow transition takes (in milliseconds) 
-      delayBeforeAnimate  : 0,         // How long to pause slide animation before going to the desired slide (used if you want your "out" FX to show). 
-      hashTags: false,
+    $('#slider').responsiveSlides({ 
+    	auto: true,             // Boolean: Animate automatically, true or false
+        speed: 500,            // Integer: Speed of the transition, in milliseconds
+    	timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+    	pager: false,           // Boolean: Show pager, true or false
+    	nav: false,             // Boolean: Show navigation, true or false
+    	random: false,          // Boolean: Randomize the order of the slides, true or false
+    	pause: false,           // Boolean: Pause on hover, true or false
+    	pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+    	prevText: "Previous",   // String: Text for the "previous" button
+    	nextText: "Next",       // String: Text for the "next" button
+    	maxwidth: "500",        // Integer: Max-width of the slideshow, in pixels
+    	navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+    	manualControls: "",     // Selector: Declare custom pager navigation
+    	namespace: "rslides",   // String: Change the default namespace used
+    	before: function(){},   // Function: Before callback
+    	after: function(){}     // Function: After callback
     });
 });
 </script>
