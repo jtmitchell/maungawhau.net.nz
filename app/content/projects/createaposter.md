@@ -1,6 +1,6 @@
 ---
 title: Create A Poster
-description: Team Posters at Fujifilm
+description: Team Posters for the AFL
 client: Fujifilm NZ
 start: December 2009
 end: July 2012

@@ -1,6 +1,6 @@
 ---
 title: TelstraClear
-description: TelstraClear
+description: Logging and searching log data from switches
 client: TelstraClear
 period: June 2004 to September 2005
 created: 2005-10-01

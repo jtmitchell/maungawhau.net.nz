@@ -1,6 +1,5 @@
 ---
 title: Time-of-Day Routing
-description: UNL Time-of-Day Routing
 client: United Networks Ltd.
 start: October 2002
 created: 2002-11-01

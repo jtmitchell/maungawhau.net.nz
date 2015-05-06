@@ -1,6 +1,5 @@
 ---
 title: Network Monitoring
-description: UNL Network Monitoring
 client: United Networks Ltd.
 start: March 2002
 end: May 2002

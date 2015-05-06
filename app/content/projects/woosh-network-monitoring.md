@@ -1,6 +1,5 @@
 ---
 title: Woosh Network Monitoring
-description: Woosh Network Monitoring
 client: Woosh Wireless
 start: November 2003
 end: June 2004

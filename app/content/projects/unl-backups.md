@@ -1,6 +1,5 @@
 ---
 title: System Backups
-description: UNL Backups
 client: United Networks Ltd.
 start: July 2002
 created: 2002-08-01

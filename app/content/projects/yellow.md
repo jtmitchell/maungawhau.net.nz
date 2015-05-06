@@ -1,6 +1,5 @@
 ---
 title: Yellow Pages
-description: Yellow Pages
 created: 2013-03-04
 client: Yellow Pages
 start: March 2013

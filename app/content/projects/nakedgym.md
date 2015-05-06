@@ -1,6 +1,6 @@
 ---
 title: The Naked Gym
-description: The Naked Gym
+description: An online store and social network for exercise
 client: Consortium
 start: April 2009
 end: August 2009

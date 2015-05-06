@@ -1,6 +1,5 @@
 ---
 title: Photo-Scan DVR
-description: Photo-Scan DVR
 client: Photo-Scan Ltd.
 start: February 2003
 created: 2003-03-01

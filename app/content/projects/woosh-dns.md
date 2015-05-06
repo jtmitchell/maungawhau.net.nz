@@ -1,6 +1,6 @@
 ---
 title: .NET meets DNS
-description: .NET meets DNS
+description: Webservices on Linux to manipulate DNS
 client: Woosh Wireless
 start: November 2005
 end: February 2006

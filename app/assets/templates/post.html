@@ -3,6 +3,9 @@
 {% block content -%}
 <article class="post">
 	<header>
+{% if page.description %}
+    <em>{{page.description}}</em>
+{% endif %}
 {% if page.client %}
 		<p class="large">Client: {{page.client}}, 
 			<span class="medium">
@@ -10,7 +13,8 @@
 			</span>
 		</p>
 {% else %}
-        <p class="published">{{page.created|date('M j, Y')}}<br/>
+        <p class="published">By {% if page.author %}{{page.author}}{% else %}{{site.author}}{% endif %}
+                             on {{page.created|date('M j, Y')}}<br/>
 {% endif %}
         <span class="small">{% if page.tags %}Tags: {% endif %}
             {% for tag in page.tags %}

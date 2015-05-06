@@ -1,6 +1,6 @@
 ---
 title: Shopping at Ferrit
-description: Shopping at Ferrit
+description: Telecom NZ's shopping portal
 client: Telecom NZ
 start: October 2006
 end: February 2009

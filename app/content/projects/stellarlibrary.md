@@ -1,6 +1,6 @@
 ---
 title: StellarLibrary
-description: StellarLibrary
+description: Making it easy to manage documents on your iPad
 client: Stellar Software
 start: September 2012
 end: February 2013

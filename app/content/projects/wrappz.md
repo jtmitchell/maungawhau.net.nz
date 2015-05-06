@@ -1,6 +1,6 @@
 ---
 title: Wrappz
-description: Wrappz at Fujifilm NZ
+description: Customised skins for gadgets
 client: Fujifilm NZ
 start: December 2009
 end: July 2012

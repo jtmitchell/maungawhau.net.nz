@@ -1,6 +1,6 @@
 ---
 title: Yellow Pages Refresh
-description: Visual Refresh of Yellow Pages
+description: Visual refresh of Yellow Pages website
 client: Yellow Pages
 start: March 2013
 end: March 2015

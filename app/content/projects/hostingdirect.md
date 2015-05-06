@@ -1,6 +1,5 @@
 ---
 title: Hosting Direct
-description: Hosting Direct
 client: Hosting Direct
 start: November 2009
 created: 2009-12-01
