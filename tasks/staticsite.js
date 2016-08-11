@@ -1,6 +1,5 @@
 'use strict';
 
-var _ = require('underscore');
 var argv = require('yargs').argv;
 var frontMatter = require('gulp-front-matter');
 var merge = require('merge-stream');
@@ -24,7 +23,7 @@ var site = {
 	    'google_verify': 'ly8QgWAy0wwtyg5EoDAcuzhxRvsglDkNS740NVwHLco',
 	    'analytics_id': 'UA-62644260-1',
 	    'time': new Date()
-}
+};
 
 if (argv._.indexOf('serve:dist') > -1) {
 	site.url = 'http://localhost:9000';
@@ -38,11 +37,11 @@ swigExtras.useFilter(swig, 'truncate');
 
 function summarize(marker) {
     return through.obj(function (file, enc, cb) {
-        var summary = file.contents.toString().split(marker)[0]
-        file.page.summary = summary
-        this.push(file)
-        cb()
-    })
+        var summary = file.contents.toString().split(marker)[0];
+        file.page.summary = summary;
+        this.push(file);
+        cb();
+    });
 }
 
 
@@ -100,7 +99,7 @@ gulp.task('posts', ['cleanposts'], function () {
                 site.posts = posts;
                 site.tags = tags;
                 cb();
-            })
+            });
         })())
         .pipe(applyTemplate('app/assets/templates/post.html'))
         .pipe(gulp.dest('dist/posts'));
@@ -125,7 +124,7 @@ gulp.task('projects', function () {
                 file.page.url = 'projects/' + path.basename(file.path, '.md');
                 projects.push(file.page);
                 projects[projects.length - 1].content = file.contents.toString();
-                
+
                 if (file.page.tags) {
                     file.page.tags.forEach(function (tag) {
                         if (tags.indexOf(tag) === -1) {
@@ -140,11 +139,11 @@ gulp.task('projects', function () {
             function (cb) {
                 projects.sort(function (a, b) {
                 	return b.created - a.created;
-                })
+                });
                 site.projects = projects;
                 site.tags = tags;
                 cb();
-            })
+            });
         })())
         .pipe(applyTemplate('app/assets/templates/post.html'))
         .pipe(gulp.dest('dist/projects'));
@@ -189,11 +188,11 @@ gulp.task('rss', ['posts'], function () {
             var data = {
                 site: site,
                 page: {}
-            }
-            var tpl = swig.compileFile(file.path)
-            file.contents = new Buffer(tpl(data), 'utf8')
-            this.push(file)
-            cb()
+            };
+            var tpl = swig.compileFile(file.path);
+            file.contents = new Buffer(tpl(data), 'utf8');
+            this.push(file);
+            cb();
         }))
         .pipe(gulp.dest('dist'));
 });
@@ -204,21 +203,21 @@ gulp.task('sitemap', ['posts', 'pages', 'projects'], function () {
             var data = {
                 site: site,
                 page: {}
-            }
-            var tpl = swig.compileFile(file.path)
-            file.contents = new Buffer(tpl(data), 'utf8')
-            this.push(file)
-            cb()
+            };
+            var tpl = swig.compileFile(file.path);
+            file.contents = new Buffer(tpl(data), 'utf8');
+            this.push(file);
+            cb();
         }))
         .pipe(gulp.dest('dist'));
 });
 
-function tags() {    
+function tags() {
 	var stream = through.obj(function(file, enc, cb) {
 		this.push(file);
 		cb();
 	});
-    
+
 	if (site.tags) {
 		site.tags.forEach(function (tag) {
 			var file = new gutil.File({
@@ -226,13 +225,13 @@ function tags() {
 				contents: new Buffer('')
 			});
 			file.page = {title: tag, tag: tag, nav: tag};
-            
-			stream.write(file);        
+
+			stream.write(file);
 		});
 	}
-  
+
 	stream.end();
-	stream.emit("end");
+	stream.emit('end');
 
 	return stream;
 }
