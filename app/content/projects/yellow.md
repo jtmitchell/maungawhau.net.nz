@@ -16,7 +16,7 @@ image_caption: YellowPages
 ![YellowPages](/images/projects/yellowpages.jpg)
 
 At [Yellow Pages](http://www.yellowpages.co.nz)
-we are involved in BAU defect fixes and rolling out the updated
+we were involved in BAU defect fixes and rolling out the updated
 versions of legacy sites.
 
 The updates have included a visual refresh, adding ratings and reviews, photo uploads,
